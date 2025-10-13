@@ -22,9 +22,9 @@ const scrollToProjects = () => {
     <section class="hero-section">
       <div class="hero-content" :class="{ 'visible': isVisible }">
         <h1 class="hero-title">
-          <span class="greeting">Olá, eu sou</span>
-          <span class="name">Murilo Manoel</span>
-          <span class="role">Desenvolvedor Web | Transformando ideias em <span class="highlight">experiências digitais</span></span>
+          <span class="greeting" data-aos="fade-down" data-aos-duration="800">Olá, eu sou</span>
+          <span class="name" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">Murilo Manoel</span>
+          <span class="role" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">Desenvolvedor Web | Transformando ideias em <span class="highlight">experiências digitais</span></span>
         </h1>
         
         <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
@@ -36,16 +36,16 @@ const scrollToProjects = () => {
           <button class="btn secondary" @click="router.push('/contact')">Contato</button>
         </div>
         
-        <div class="scroll-indicator" @click="scrollToProjects">
+        <div class="scroll-indicator" @click="scrollToProjects" data-aos="fade-up" data-aos-delay="700">
           <span>Rolar para baixo</span>
           <i class="fas fa-chevron-down"></i>
         </div>
       </div>
       
       <div class="hero-background">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
+        <div class="shape shape-1" data-aos="fade-right" data-aos-duration="1500"></div>
+        <div class="shape shape-2" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200"></div>
+        <div class="shape shape-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"></div>
       </div>
     </section>
     
@@ -245,7 +245,7 @@ const scrollToProjects = () => {
     
     <!-- Why Choose My Work Section -->
     <section class="why-choose-section">
-      <h2 class="section-title" data-aos="fade-up">Por que Escolher Meu Trabalho?</h2>
+      <h2 class="section-title" data-aos="zoom-in" data-aos-duration="800">Por que Escolher Meu Trabalho?</h2>
       
       <div class="why-choose-container">
         <div class="why-choose-card" data-aos="fade-up" data-aos-delay="100">
@@ -282,41 +282,96 @@ const scrollToProjects = () => {
       </div>
       
       <!-- Seção de Currículo -->
-      <div class="resume-section" data-aos="fade-up" data-aos-delay="500">
-        <div class="resume-content">
-          <div class="resume-icon">
-            <i class="fas fa-file-download"></i>
+      <div class="resume-section" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="200">
+        <div class="resume-container">
+          <div class="resume-left">
+            <div class="resume-icon-large">
+              <i class="fas fa-file-alt"></i>
+            </div>
           </div>
-          <h3>Conheça Minha Experiência</h3>
-          <p>Baixe meu currículo completo e veja minha trajetória profissional, habilidades técnicas e projetos desenvolvidos.</p>
-          <a href="/curriculo-murilo-manoel.html" target="_blank" class="btn primary resume-btn">
-            <i class="fas fa-file-alt"></i>
-            Visualizar Currículo
-          </a>
-          <small style="margin-top: 1rem; display: block; opacity: 0.8; font-size: 0.9rem;">
-            📝 Dica: Use Ctrl+P no currículo para salvar como PDF
-          </small>
+          
+          <div class="resume-right">
+            <div class="resume-badge">
+              <i class="fas fa-award"></i>
+              <span>Desenvolvedor Web</span>
+            </div>
+            <h3>Meu Currículo Profissional</h3>
+            <p>Conheça minha trajetória, habilidades técnicas, projetos desenvolvidos e certificações. Um histórico completo da minha experiência como desenvolvedor web.</p>
+            
+            <div class="resume-actions">
+              <a href="/curriculo-murilo-manoel.html" target="_blank" class="btn primary resume-btn">
+                <i class="fas fa-eye"></i>
+                Visualizar Currículo
+              </a>
+              <a href="/Curriculo-Manoel-Murilo-23 (1).pdf" download class="btn secondary resume-btn">
+                <i class="fas fa-download"></i>
+                Baixar PDF
+              </a>
+            </div>
+            
+            <div class="resume-tip">
+              <i class="fas fa-lightbulb"></i>
+              <span>Você também pode usar Ctrl+P na visualização para salvar como PDF</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     
     <!-- GitHub Section -->
-    <section class="github-section" data-aos="fade-up">
-      <h2 class="section-title">Meu GitHub</h2>
-      <div class="github-content">
-        <div class="github-info">
-          <h3>Acompanhe meus projetos</h3>
-          <p>Confira meus repositórios, contribuições e atividades no GitHub. Aqui você encontra projetos pessoais.</p>
-          <a href="https://github.com/M4noel" target="_blank" class="btn primary">Visitar GitHub</a>
+    <section class="github-section" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="section-title" data-aos="zoom-in" data-aos-duration="800">Meu GitHub</h2>
+      <div class="github-container">
+        <div class="github-card" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+          <div class="github-header">
+            <div class="github-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="github-badge">
+              <i class="fas fa-code"></i>
+              <span>Open Source</span>
+            </div>
+          </div>
+          
+          <div class="github-body">
+            <h3>Projetos & Contribuições</h3>
+            <p>Explore meus repositórios, contribuições e atividades no GitHub. Código aberto, projetos pessoais e colaborações com a comunidade.</p>
+            
+            <div class="github-stats">
+              <div class="stat-box">
+                <i class="fas fa-code-branch"></i>
+                <div class="stat-info">
+                  <span class="stat-value">23</span>
+                  <span class="stat-label">Repositórios Públicos</span>
+                </div>
+              </div>
+            </div>
+            
+            <a href="https://github.com/M4noel" target="_blank" class="btn primary github-btn">
+              <i class="fab fa-github"></i>
+              Visitar Meu GitHub
+            </a>
+          </div>
         </div>
-        <div class="github-iframe-container">
-          <img src="/src/assets/GitHub___headpic.jpg" alt="" data-v-2dc54a20="" style=" max-width: 721px; border-radius: 20px;">
+        
+        <div class="github-preview" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
+          <div class="preview-header">
+            <div class="preview-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="preview-title">github.com/M4noel</span>
+          </div>
+          <div class="preview-image">
+            <img src="/src/assets/GitHub___headpic.jpg" alt="GitHub Profile">
+          </div>
         </div>
       </div>
     </section>
     
     <!-- CTA Section -->
-    <section class="cta-section" data-aos="fade-up">
+    <section class="cta-section" data-aos="zoom-in" data-aos-duration="1000">
       <div class="cta-content">
         <h2>Vamos criar algo incrível juntos?</h2>
         <p>Estou sempre aberto a novos desafios e oportunidades. Entre em contato para conversarmos sobre projetos ou parcerias.</p>
@@ -433,15 +488,22 @@ const scrollToProjects = () => {
 
 .scroll-indicator {
   position: absolute;
-    bottom: 0rem;
-    left: 43%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    animation: bounce-2dc54a20 2s infinite;
-    top: 100%;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite;
+  
+  &:hover {
+    transform: translateX(-50%) translateY(-5px);
+    animation: none;
+  }
   
   span {
     font-size: 0.9rem;
@@ -467,7 +529,6 @@ const scrollToProjects = () => {
   }
 }
 
-
 .hero-background {
   position: absolute;
   top: 0;
@@ -480,35 +541,35 @@ const scrollToProjects = () => {
 .shape {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.4;
-}
-
-.shape-1 {
-  top: 20%;
-  right: 15%;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-  animation: float 8s ease-in-out infinite;
-}
-
-.shape-2 {
-  bottom: 10%;
-  left: 10%;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(to right, var(--secondary-color), #06b6d4);
-  animation: float 12s ease-in-out infinite;
-}
-
-.shape-3 {
-  top: 40%;
-  left: 25%;
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(to right, #f59e0b, #ef4444);
-  animation: float 10s ease-in-out infinite;
+  opacity: 0.15;
+  filter: blur(40px);
+  
+  &.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-color);
+    top: 10%;
+    left: 10%;
+    animation: float 20s ease-in-out infinite, pulse 4s ease-in-out infinite;
+  }
+  
+  &.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary-color);
+    bottom: 20%;
+    right: 15%;
+    animation: float 15s ease-in-out infinite reverse, pulse 5s ease-in-out infinite;
+  }
+  
+  &.shape-3 {
+    width: 250px;
+    height: 250px;
+    background: var(--accent-color);
+    top: 50%;
+    right: 20%;
+    animation: float 25s ease-in-out infinite, pulse 6s ease-in-out infinite;
+  }
 }
 
 @keyframes float {
@@ -620,16 +681,16 @@ const scrollToProjects = () => {
 }
 
 .service-icon {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   background: var(--gradient-primary);
-  border-radius: 50%;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  animation: pulse 3s ease-in-out infinite;
   
   &::before {
     content: '';
@@ -1049,6 +1110,81 @@ const scrollToProjects = () => {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(5deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(-5deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(79, 70, 229, 0.6);
+  }
+}
+
 // Why Choose My Work Section
 .why-choose-section {
   padding: 6rem 2rem;
@@ -1057,20 +1193,31 @@ const scrollToProjects = () => {
 
 .why-choose-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
   margin: 0 auto;
+  margin-bottom: 20%;
+  
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .why-choose-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 24px;
+  padding: 2.5rem 1.5rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  border: 2px solid rgba(79, 70, 229, 0.08);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
   
@@ -1081,186 +1228,337 @@ const scrollToProjects = () => {
     left: 0;
     width: 100%;
     height: 4px;
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
     transform: scaleX(0);
-    transition: transform 0.4s ease;
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   
   &:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12),
+                0 10px 30px rgba(79, 70, 229, 0.1);
+    border-color: rgba(79, 70, 229, 0.15);
     
     &::before {
       transform: scaleX(1);
     }
     
     .card-icon {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 15px 40px rgba(79, 70, 229, 0.3);
     }
   }
   
   .card-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-primary);
-    border-radius: 20px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 2rem;
-    transition: all 0.4s ease;
+    margin: 0 auto 1.5rem;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
+    animation: glow 3s ease-in-out infinite;
     
     i {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: white;
     }
   }
   
   h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 800;
     margin-bottom: 1rem;
     color: var(--dark-color);
+    line-height: 1.3;
+    letter-spacing: -0.3px;
   }
   
   p {
     color: var(--text-color);
-    line-height: 1.6;
-    font-size: 1rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    opacity: 0.9;
   }
 }
 
 // Resume Section
 .resume-section {
-  margin-top: 4rem;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  border-radius: 20px;
-  max-width: 800px;
+  margin-top: 5rem;
+  padding: 0;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   position: relative;
-  overflow: hidden;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    animation: float 15s ease-in-out infinite;
+  .resume-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1),
+                0 5px 20px rgba(79, 70, 229, 0.05);
+    border: 2px solid rgba(79, 70, 229, 0.08);
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    }
   }
   
-  .resume-content {
+  .resume-left {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    z-index: 2;
-    color: white;
+    overflow: hidden;
     
-    .resume-icon {
-      width: 80px;
-      height: 80px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .resume-icon-large {
+      width: 160px;
+      height: 160px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 2rem;
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      transition: all 0.3s ease;
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      z-index: 2;
+      animation: pulse 4s ease-in-out infinite;
       
       &:hover {
-        transform: scale(1.1) rotate(10deg);
-        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
       }
       
       i {
-        font-size: 2rem;
+        font-size: 5rem;
         color: white;
+      }
+    }
+  }
+  
+  .resume-right {
+    padding: 3rem 3rem 3rem 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    .resume-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(139, 92, 246, 0.1));
+      color: var(--primary-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+      border: 1px solid rgba(79, 70, 229, 0.2);
+      
+      i {
+        font-size: 1rem;
       }
     }
     
     h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--dark-color);
       margin-bottom: 1rem;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
     }
     
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.8;
+      color: var(--text-color);
       margin-bottom: 2rem;
-      opacity: 0.95;
+      opacity: 0.9;
+    }
+    
+    .resume-actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      
+      .resume-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        text-decoration: none;
+        
+        i {
+          font-size: 1.1rem;
+        }
+        
+        &.primary {
+          background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+          color: white;
+          border: none;
+          box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+          
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
+          }
+        }
+        
+        &.secondary {
+          background: white;
+          color: var(--primary-color);
+          border: 2px solid var(--primary-color);
+          
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+          }
+        }
+      }
+    }
+    
+    .resume-tip {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 1.5rem;
+      background: rgba(79, 70, 229, 0.05);
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-color);
+      
+      i {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+      }
+      
+      span {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.8;
+      }
     }
   }
   
-  .resume-btn {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    font-weight: 600;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background: white;
-      color: var(--primary-color);
-      border-color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  @media (max-width: 968px) {
+    .resume-container {
+      grid-template-columns: 1fr;
+      gap: 0;
     }
     
-    i {
-      margin-right: 0.5rem;
-      font-size: 1rem;
+    .resume-left {
+      padding: 2.5rem 2rem;
+      
+      .resume-icon-large {
+        width: 120px;
+        height: 120px;
+        
+        i {
+          font-size: 3.5rem;
+        }
+      }
+    }
+    
+    .resume-right {
+      padding: 2.5rem 2rem;
+      
+      h3 {
+        font-size: 1.8rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .resume-actions {
+        flex-direction: column;
+        
+        .resume-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
     }
   }
 }
 
 // GitHub Section
 .github-section {
-  padding: 6rem 2rem;
-  background-color: #f8fafc;
+  padding: 7rem 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
   overflow: hidden;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
 }
 
-.github-content {
+.github-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
 }
 
-.github-info {
-  h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--dark-color);
-  }
-  
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-  }
-}
-
-.github-iframe-container {
+.github-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08),
+              0 5px 20px rgba(79, 70, 229, 0.05);
+  border: 2px solid rgba(79, 70, 229, 0.08);
   position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  background: white;
-  border: 1px solid #e5e7eb;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   
   &::before {
     content: '';
@@ -1268,26 +1566,264 @@ const scrollToProjects = () => {
     top: 0;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    border-radius: 30px 30px 0 0;
+  }
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12),
+                0 10px 30px rgba(79, 70, 229, 0.1);
+  }
+  
+  .github-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    
+    .github-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #24292f, #1f2328);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: pulse 3s ease-in-out infinite;
+      
+      &:hover {
+        transform: scale(1.1) rotate(-5deg);
+      }
+      
+      i {
+        font-size: 2.5rem;
+        color: white;
+      }
+    }
+    
+    .github-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(139, 92, 246, 0.1));
+      color: var(--primary-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(79, 70, 229, 0.2);
+      
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .github-body {
+    h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark-color);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .github-stats {
+      display: flex;
+      margin-bottom: 2rem;
+      
+      .stat-box {
+        background: rgba(79, 70, 229, 0.05);
+        border: 1px solid rgba(79, 70, 229, 0.1);
+        border-radius: 15px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        transition: all 0.3s ease;
+        width: 100%;
+        
+        &:hover {
+          background: rgba(79, 70, 229, 0.1);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
+        }
+        
+        i {
+          font-size: 2.5rem;
+          color: var(--primary-color);
+        }
+        
+        .stat-info {
+          display: flex;
+          flex-direction: column;
+          
+          .stat-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            line-height: 1;
+          }
+          
+          .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-top: 0.3rem;
+          }
+        }
+      }
+    }
+    
+    .github-btn {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, #24292f, #1f2328);
+      color: white;
+      border: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      text-decoration: none;
+      
+      i {
+        font-size: 1.2rem;
+      }
+      
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(135deg, #1f2328, #24292f);
+      }
+    }
+  }
+}
+
+.github-preview {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  }
+  
+  .preview-header {
     background: linear-gradient(135deg, #24292f, #1f2328);
-    z-index: 1;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .preview-dots {
+      display: flex;
+      gap: 0.5rem;
+      
+      span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        
+        &:nth-child(1) {
+          background: #ff5f57;
+        }
+        
+        &:nth-child(2) {
+          background: #ffbd2e;
+        }
+        
+        &:nth-child(3) {
+          background: #28c840;
+        }
+      }
+    }
+    
+    .preview-title {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
   }
   
-  &::after {
-    content: '🔴🟡🟢';
-    position: absolute;
-    top: 12px;
-    left: 15px;
-    color: #8b949e;
-    font-size: 12px;
-    z-index: 2;
+  .preview-image {
+    background: #0d1117;
+    padding: 0;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
   }
   
-  iframe {
-    display: block;
-    border: none;
-    padding-top: 40px;
-    background: white;
+  &:hover .preview-image img {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 968px) {
+  .github-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .github-card {
+    padding: 2rem;
+    
+    .github-header {
+      .github-icon {
+        width: 70px;
+        height: 70px;
+        
+        i {
+          font-size: 2rem;
+        }
+      }
+    }
+    
+    .github-body {
+      h3 {
+        font-size: 1.6rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .github-stats {
+        width: 100%;
+      }
+    }
+  }
+  
+  .github-preview {
+    display: none;
   }
 }
 
@@ -1430,8 +1966,7 @@ const scrollToProjects = () => {
   }
   
   .services-grid,
-  .projects-grid,
-  .why-choose-container {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
   
