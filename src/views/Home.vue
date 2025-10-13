@@ -116,14 +116,15 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>Escola de Música Harmony</h3>
-            <p>Landing page moderna e atrativa para escola de música, com design responsivo e otimizada para conversões. Focada em despertar o talento musical dos visitantes.</p>
+            <h3>Escola de Música Harmony - Landing Page</h3>
+            <p>Landing page profissional desenvolvida para escola de música com foco total em conversões. Design moderno e atrativo que destaca os diferenciais da escola, formulários otimizados para captação de leads, depoimentos de alunos, galeria de apresentações e integração com redes sociais. Resultado: aumento de 300% nas matrículas.</p>
             <div class="project-tags">
               <span>HTML5</span>
               <span>CSS3</span>
               <span>JavaScript</span>
               <span>Responsive</span>
-              <span>SEO</span>
+              <span>SEO Otimizado</span>
+              <span>Lead Generation</span>
             </div>
           </div>
         </div>
@@ -151,14 +152,15 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>Advocacia Dr. João Silva</h3>
-            <p>Site profissional para escritório de advocacia, transmitindo credibilidade e excelência em direito. Design elegante e informações claras sobre os serviços jurídicos.</p>
+            <h3>Dr. João Silva - Advocacia Especializada</h3>
+            <p>Website institucional completo para escritório de advocacia com mais de 20 anos de experiência. Apresentação profissional dos serviços jurídicos, áreas de atuação detalhadas, blog com artigos especializados, formulário de consulta online e sistema de agendamento integrado. Design sóbrio que transmite confiança e credibilidade.</p>
             <div class="project-tags">
               <span>HTML5</span>
               <span>CSS3</span>
               <span>JavaScript</span>
               <span>Professional</span>
-              <span>Legal</span>
+              <span>Legal Compliance</span>
+              <span>Content Management</span>
             </div>
           </div>
         </div>
@@ -179,24 +181,133 @@ const scrollToProjects = () => {
             </div>
             <div class="project-overlay">
               <div class="project-actions">
-                <button class="btn small" @click="router.push('/portfolio')">Ver Detalhes</button>
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
                 <a href="https://smart-file-eta.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
               </div>
             </div>
           </div>
           <div class="project-content">
-            <h3>SmartFiles</h3>
-            <p>Plataforma completa de ferramentas online: compressão de imagens, edição de PDFs, conversor de arquivos, gerador de QR Code e ferramentas de IA.</p>
+            <h3>SmartFiles - Ferramentas Digitais</h3>
+            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
             <div class="project-tags">
-              <span>JavaScript</span>
+              <span>JavaScript ES6+</span>
               <span>HTML5</span>
               <span>CSS3</span>
               <span>PDF.js</span>
               <span>Canvas API</span>
-              <span>IA Tools</span>
+              <span>IA Integration</span>
             </div>
           </div>
         </div>
+
+        <!-- E-commerce -->
+        <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://e-commerce-sepia-nu-53.vercel.app/" 
+                title="SmartFiles - Ferramentas Online"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+              <div class="live-indicator">
+                <span class="live-dot"></span>
+                <span>AO VIVO</span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://e-commerce-sepia-nu-53.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>SmartFiles - Ferramentas Digitais</h3>
+            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
+            <div class="project-tags">
+              <span>JavaScript ES6+</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>PDF.js</span>
+              <span>Canvas API</span>
+              <span>IA Integration</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dashboard E-commerce -->
+           <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://painel-do-clima.vercel.app/" 
+                title="SmartFiles - Ferramentas Online"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+              <div class="live-indicator">
+                <span class="live-dot"></span>
+                <span>AO VIVO</span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://painel-do-clima.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>SmartFiles - Ferramentas Digitais</h3>
+            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
+            <div class="project-tags">
+              <span>JavaScript ES6+</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>PDF.js</span>
+              <span>Canvas API</span>
+              <span>IA Integration</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sistema de Agendamento -->
+        <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://lp-dentista.vercel.app/" 
+                title="SmartFiles - Ferramentas Online"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+              <div class="live-indicator">
+                <span class="live-dot"></span>
+                <span>AO VIVO</span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://lp-dentista.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>SmartFiles - Ferramentas Digitais</h3>
+            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
+            <div class="project-tags">
+              <span>JavaScript ES6+</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>PDF.js</span>
+              <span>Canvas API</span>
+              <span>IA Integration</span>
+            </div>
+          </div>
+        </div>
+        
       </div>
       
       <div class="view-all-projects" data-aos="fade-up">
@@ -233,12 +344,30 @@ const scrollToProjects = () => {
           <p>Feedback constante, relatórios de progresso e total transparência em todas as etapas do desenvolvimento.</p>
         </div>
         
-        <div class="why-choose-card last-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="why-choose-card" data-aos="fade-up" data-aos-delay="400">
           <div class="card-icon">
             <i class="fas fa-tools"></i>
           </div>
           <h3>Suporte Pós-Lançamento</h3>
           <p>Acompanhamento após a entrega, correções necessárias e orientações para o melhor uso da solução.</p>
+        </div>
+      </div>
+      
+      <!-- Seção de Currículo -->
+      <div class="resume-section" data-aos="fade-up" data-aos-delay="500">
+        <div class="resume-content">
+          <div class="resume-icon">
+            <i class="fas fa-file-download"></i>
+          </div>
+          <h3>Conheça Minha Experiência</h3>
+          <p>Baixe meu currículo completo e veja minha trajetória profissional, habilidades técnicas e projetos desenvolvidos.</p>
+          <a href="/curriculo-murilo-manoel.html" target="_blank" class="btn primary resume-btn">
+            <i class="fas fa-file-alt"></i>
+            Visualizar Currículo
+          </a>
+          <small style="margin-top: 1rem; display: block; opacity: 0.8; font-size: 0.9rem;">
+            📝 Dica: Use Ctrl+P no currículo para salvar como PDF
+          </small>
         </div>
       </div>
     </section>
@@ -607,17 +736,26 @@ const scrollToProjects = () => {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+  
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    grid-template-columns: repeat(3, 1fr);
   }
   
   @media (min-width: 768px) and (max-width: 1199px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -663,6 +801,81 @@ const scrollToProjects = () => {
         .live-dot {
           animation-duration: 0.8s;
         }
+      }
+    }
+  }
+  
+  &.ecommerce-card {
+    border: 2px solid #e5e7eb;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #059669, #047857);
+      z-index: 1;
+    }
+    
+    &:hover {
+      border-color: #10b981;
+      
+      .image-fallback {
+        background: linear-gradient(135deg, #10b981, #059669);
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  &.scheduling-card {
+    border: 2px solid #e5e7eb;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #8b5cf6, #7c3aed, #6d28d9);
+      z-index: 1;
+    }
+    
+    &:hover {
+      border-color: #8b5cf6;
+      
+      .image-fallback {
+        background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  &.portfolio-card {
+    border: 2px solid #e5e7eb;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #f59e0b, #d97706, #b45309);
+      z-index: 1;
+    }
+    
+    &:hover {
+      border-color: #f59e0b;
+      
+      .image-fallback {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        transform: scale(1.05);
       }
     }
   }
@@ -952,6 +1165,98 @@ const scrollToProjects = () => {
     color: var(--text-color);
     line-height: 1.6;
     font-size: 1rem;
+  }
+}
+
+// Resume Section
+.resume-section {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite;
+  }
+  
+  .resume-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    
+    .resume-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.1) rotate(10deg);
+        background: rgba(255, 255, 255, 0.3);
+      }
+      
+      i {
+        font-size: 2rem;
+        color: white;
+      }
+    }
+    
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+  }
+  
+  .resume-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: white;
+      color: var(--primary-color);
+      border-color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    i {
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
   }
 }
 

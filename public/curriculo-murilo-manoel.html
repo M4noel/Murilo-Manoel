@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Murilo Manoel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #4f46e5;
+            margin-bottom: 5px;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            color: #6b7280;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            color: #4f46e5;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-title, .education-title, .project-title {
+            font-weight: bold;
+            color: #1f2937;
+            font-size: 14px;
+        }
+
+        .experience-company, .education-institution {
+            color: #4f46e5;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .experience-period, .education-period {
+            color: #6b7280;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        .experience-description, .project-description {
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category h4 {
+            color: #4f46e5;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            font-size: 11px;
+            margin-bottom: 3px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .skill-list li:before {
+            content: "•";
+            color: #4f46e5;
+            position: absolute;
+            left: 0;
+        }
+
+        .achievements ul {
+            list-style: none;
+        }
+
+        .achievements li {
+            font-size: 12px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .achievements li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                max-width: none;
+            }
+            
+            body {
+                font-size: 12px;
+            }
+            
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Murilo Manoel</h1>
+            <h2>Desenvolvedor Web Full-Stack</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>murilo.dev@email.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>(11) 99999-9999</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>github.com/M4noel</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>São Paulo, SP</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h3 class="section-title">Perfil Profissional</h3>
+            <p style="font-size: 12px; text-align: justify; line-height: 1.6;">
+                Desenvolvedor Web Full-Stack com experiência sólida em criação de soluções web modernas, responsivas e de alta performance. 
+                Especializado em JavaScript, Vue.js, HTML5, CSS3 e desenvolvimento de interfaces intuitivas. 
+                Focado em entregar projetos que combinam excelência técnica com experiência do usuário excepcional.
+            </p>
+        </section>
+
+        <div class="two-column">
+            <div class="left-column">
+                <section class="section">
+                    <h3 class="section-title">Experiência Profissional</h3>
+                    
+                    <div class="experience-item">
+                        <div class="experience-title">Desenvolvedor Web Freelancer</div>
+                        <div class="experience-company">Autônomo</div>
+                        <div class="experience-period">2022 - Presente</div>
+                        <div class="experience-description">
+                            • Desenvolvimento de landing pages e sites institucionais para diversos clientes<br>
+                            • Criação de aplicações web com Vue.js e tecnologias modernas<br>
+                            • Implementação de designs responsivos e otimizados para SEO<br>
+                            • Desenvolvimento de ferramentas online personalizadas
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-title">Desenvolvedor Frontend</div>
+                        <div class="experience-company">Projetos Pessoais</div>
+                        <div class="experience-period">2021 - 2022</div>
+                        <div class="experience-description">
+                            • Desenvolvimento do SmartFiles - plataforma de ferramentas online<br>
+                            • Implementação de funcionalidades avançadas com JavaScript puro<br>
+                            • Integração com APIs e serviços externos<br>
+                            • Otimização de performance e experiência do usuário
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Formação Acadêmica</h3>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
+                        <div class="education-institution">Universidade Tecnológica</div>
+                        <div class="education-period">2020 - 2023</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-title">Curso Técnico em Informática</div>
+                        <div class="education-institution">ETEC</div>
+                        <div class="education-period">2018 - 2020</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Certificações</h3>
+                    <ul style="list-style: none; font-size: 12px;">
+                        <li style="margin-bottom: 8px;">🏆 JavaScript Avançado - Udemy</li>
+                        <li style="margin-bottom: 8px;">🏆 Vue.js Complete Course - Vue Mastery</li>
+                        <li style="margin-bottom: 8px;">🏆 Responsive Web Design - FreeCodeCamp</li>
+                        <li style="margin-bottom: 8px;">🏆 Git e GitHub - Curso em Vídeo</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <section class="section">
+                    <h3 class="section-title">Habilidades Técnicas</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <ul class="skill-list">
+                                <li>HTML5</li>
+                                <li>CSS3 / SCSS</li>
+                                <li>JavaScript ES6+</li>
+                                <li>Vue.js</li>
+                                <li>Responsive Design</li>
+                                <li>Bootstrap</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <ul class="skill-list">
+                                <li>Node.js</li>
+                                <li>Express.js</li>
+                                <li>PHP</li>
+                                <li>MySQL</li>
+                                <li>MongoDB</li>
+                                <li>API REST</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Ferramentas</h4>
+                            <ul class="skill-list">
+                                <li>Git / GitHub</li>
+                                <li>VS Code</li>
+                                <li>Figma</li>
+                                <li>Vercel</li>
+                                <li>Netlify</li>
+                                <li>Adobe XD</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Projetos Destacados</h3>
+                    
+                    <div class="project-item">
+                        <div class="project-title">SmartFiles - Ferramentas Online</div>
+                        <div class="project-description">
+                            Plataforma completa com ferramentas para compressão de imagens, 
+                            edição de PDFs, conversor de arquivos e gerador de QR Code.
+                            <br><strong>Tecnologias:</strong> JavaScript, HTML5, CSS3, PDF.js
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">Escola de Música Harmony</div>
+                        <div class="project-description">
+                            Landing page moderna para escola de música com foco em conversões.
+                            <br><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript, SEO
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">Site Advocacia Dr. João Silva</div>
+                        <div class="project-description">
+                            Site profissional para escritório de advocacia com design elegante.
+                            <br><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section achievements">
+                    <h3 class="section-title">Realizações</h3>
+                    <ul>
+                        <li>Mais de 20 projetos web desenvolvidos com sucesso</li>
+                        <li>100% de satisfação dos clientes nas entregas</li>
+                        <li>Especialista em otimização de performance web</li>
+                        <li>Experiência em design responsivo para diversos dispositivos</li>
+                        <li>Conhecimento sólido em SEO e acessibilidade web</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Idiomas</h3>
+                    <div style="font-size: 12px;">
+                        <div style="margin-bottom: 8px;"><strong>Português:</strong> Nativo</div>
+                        <div style="margin-bottom: 8px;"><strong>Inglês:</strong> Intermediário</div>
+                        <div style="margin-bottom: 8px;"><strong>Espanhol:</strong> Básico</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
