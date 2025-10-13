@@ -103,10 +103,6 @@ const scrollToProjects = () => {
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               ></iframe>
-              <div class="live-indicator">
-                <span class="live-dot"></span>
-                <span>AO VIVO</span>
-              </div>
             </div>
             <div class="project-overlay">
               <div class="project-actions">
@@ -116,16 +112,8 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>Escola de Música Harmony - Landing Page</h3>
-            <p>Landing page profissional desenvolvida para escola de música com foco total em conversões. Design moderno e atrativo que destaca os diferenciais da escola, formulários otimizados para captação de leads, depoimentos de alunos, galeria de apresentações e integração com redes sociais. Resultado: aumento de 300% nas matrículas.</p>
-            <div class="project-tags">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>JavaScript</span>
-              <span>Responsive</span>
-              <span>SEO Otimizado</span>
-              <span>Lead Generation</span>
-            </div>
+            <h3>Escola de Música Harmony</h3>
+            <p>Landing page com foco em conversões, design moderno e formulários otimizados. Resultado: aumento de 300% nas matrículas.</p>
           </div>
         </div>
         
@@ -139,10 +127,6 @@ const scrollToProjects = () => {
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               ></iframe>
-              <div class="live-indicator legal">
-                <span class="live-dot"></span>
-                <span>AO VIVO</span>
-              </div>
             </div>
             <div class="project-overlay">
               <div class="project-actions">
@@ -152,20 +136,12 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>Dr. João Silva - Advocacia Especializada</h3>
-            <p>Website institucional completo para escritório de advocacia com mais de 20 anos de experiência. Apresentação profissional dos serviços jurídicos, áreas de atuação detalhadas, blog com artigos especializados, formulário de consulta online e sistema de agendamento integrado. Design sóbrio que transmite confiança e credibilidade.</p>
-            <div class="project-tags">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>JavaScript</span>
-              <span>Professional</span>
-              <span>Legal Compliance</span>
-              <span>Content Management</span>
-            </div>
+            <h3>Advocacia Dr. João Silva</h3>
+            <p>Website institucional com apresentação de serviços jurídicos, blog especializado e sistema de agendamento. Design que transmite confiança.</p>
           </div>
         </div>
         
-        <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="300">
           <div class="project-image">
             <div class="iframe-container">
               <iframe 
@@ -174,10 +150,6 @@ const scrollToProjects = () => {
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               ></iframe>
-              <div class="live-indicator">
-                <span class="live-dot"></span>
-                <span>AO VIVO</span>
-              </div>
             </div>
             <div class="project-overlay">
               <div class="project-actions">
@@ -187,33 +159,21 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>SmartFiles - Ferramentas Digitais</h3>
-            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
-            <div class="project-tags">
-              <span>JavaScript ES6+</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>PDF.js</span>
-              <span>Canvas API</span>
-              <span>IA Integration</span>
-            </div>
+            <h3>SmartFiles</h3>
+            <p>Plataforma com 10+ ferramentas: compressão de imagens, editor de PDFs, conversor de arquivos, gerador de QR Code e IA integrada.</p>
           </div>
         </div>
 
         <!-- E-commerce -->
-        <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="project-card ecommerce-card" data-aos="fade-up" data-aos-delay="400">
           <div class="project-image">
             <div class="iframe-container">
               <iframe 
                 src="https://e-commerce-sepia-nu-53.vercel.app/" 
-                title="SmartFiles - Ferramentas Online"
+                title="E-commerce Moderno"
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               ></iframe>
-              <div class="live-indicator">
-                <span class="live-dot"></span>
-                <span>AO VIVO</span>
-              </div>
             </div>
             <div class="project-overlay">
               <div class="project-actions">
@@ -223,33 +183,21 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>SmartFiles - Ferramentas Digitais</h3>
-            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
-            <div class="project-tags">
-              <span>JavaScript ES6+</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>PDF.js</span>
-              <span>Canvas API</span>
-              <span>IA Integration</span>
-            </div>
+            <h3>E-commerce Moderno</h3>
+            <p>Loja virtual com carrinho de compras, pagamento integrado, gestão de produtos e painel administrativo. Interface intuitiva e responsiva.</p>
           </div>
         </div>
         
-        <!-- Dashboard E-commerce -->
-           <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="400">
+        <!-- Dashboard Clima -->
+        <div class="project-card weather-card" data-aos="fade-up" data-aos-delay="500">
           <div class="project-image">
             <div class="iframe-container">
               <iframe 
                 src="https://painel-do-clima.vercel.app/" 
-                title="SmartFiles - Ferramentas Online"
+                title="Painel do Clima"
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               ></iframe>
-              <div class="live-indicator">
-                <span class="live-dot"></span>
-                <span>AO VIVO</span>
-              </div>
             </div>
             <div class="project-overlay">
               <div class="project-actions">
@@ -259,33 +207,21 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>SmartFiles - Ferramentas Digitais</h3>
-            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
-            <div class="project-tags">
-              <span>JavaScript ES6+</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>PDF.js</span>
-              <span>Canvas API</span>
-              <span>IA Integration</span>
-            </div>
+            <h3>Painel do Clima</h3>
+            <p>Dashboard de previsão do tempo com dados em tempo real, gráficos dinâmicos e mapas meteorológicos. Interface moderna e acessível.</p>
           </div>
         </div>
         
-        <!-- Sistema de Agendamento -->
-        <div class="project-card smartfiles-card" data-aos="fade-up" data-aos-delay="400">
+        <!-- Clínica Odontológica -->
+        <div class="project-card dental-card" data-aos="fade-up" data-aos-delay="600">
           <div class="project-image">
             <div class="iframe-container">
               <iframe 
                 src="https://lp-dentista.vercel.app/" 
-                title="SmartFiles - Ferramentas Online"
+                title="Clínica Odontológica"
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               ></iframe>
-              <div class="live-indicator">
-                <span class="live-dot"></span>
-                <span>AO VIVO</span>
-              </div>
             </div>
             <div class="project-overlay">
               <div class="project-actions">
@@ -295,16 +231,8 @@ const scrollToProjects = () => {
             </div>
           </div>
           <div class="project-content">
-            <h3>SmartFiles - Ferramentas Digitais</h3>
-            <p>Plataforma completa de ferramentas online com mais de 10 funcionalidades: compressão inteligente de imagens, editor avançado de PDFs, conversor multiformat, gerador profissional de QR Code e suite de ferramentas de IA integradas.</p>
-            <div class="project-tags">
-              <span>JavaScript ES6+</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>PDF.js</span>
-              <span>Canvas API</span>
-              <span>IA Integration</span>
-            </div>
+            <h3>Clínica Odontológica</h3>
+            <p>Landing page com agendamento online, galeria de casos, depoimentos de pacientes e informações da equipe. Design clean e profissional.</p>
           </div>
         </div>
         
@@ -539,20 +467,6 @@ const scrollToProjects = () => {
   }
 }
 
-@keyframes pulse-live {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 .hero-background {
   position: absolute;
@@ -617,21 +531,40 @@ const scrollToProjects = () => {
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 4.5rem;
   position: relative;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+  }
   
   &::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -18px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    border-radius: 2px;
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
   }
 }
 
@@ -730,265 +663,281 @@ const scrollToProjects = () => {
 
 // Projects Section
 .projects-section {
-  padding: 6rem 2rem;
-  background-color: #f8fafc;
+  padding: 7rem 2rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.2), transparent);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
   max-width: 1600px;
   margin: 0 auto;
+  padding: 0 1rem;
   
   @media (min-width: 1400px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
   
   @media (min-width: 1200px) and (max-width: 1399px) {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
   }
   
   @media (min-width: 768px) and (max-width: 1199px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
   
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+    padding: 0;
   }
 }
 
 .project-card {
-  background-color: white;
-  border-radius: 10px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06), 
+              0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 10;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(145deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
   
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15), 
+                0 10px 30px rgba(79, 70, 229, 0.1);
+    
+    &::before {
+      transform: scaleX(1);
+    }
+    
+    &::after {
+      opacity: 1;
+    }
     
     .project-overlay {
       opacity: 1;
     }
+    
+    .project-image .iframe-container iframe {
+      transform: scale(1.08);
+    }
+    
+    .project-content {
+      transform: translateY(-5px);
+    }
   }
   
   &.smartfiles-card {
-    border: 2px solid #e5e7eb;
-    position: relative;
-    
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
       background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
-      z-index: 1;
     }
     
     &:hover {
-      border-color: #3b82f6;
-      
-      .iframe-container iframe {
-        transform: scale(1.02);
-      }
-      
-      .live-indicator {
-        .live-dot {
-          animation-duration: 0.8s;
-        }
+      .project-content h3 {
+        color: #3b82f6;
       }
     }
   }
   
   &.ecommerce-card {
-    border: 2px solid #e5e7eb;
-    position: relative;
-    
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
       background: linear-gradient(90deg, #10b981, #059669, #047857);
-      z-index: 1;
     }
     
     &:hover {
-      border-color: #10b981;
-      
-      .image-fallback {
-        background: linear-gradient(135deg, #10b981, #059669);
-        transform: scale(1.05);
+      .project-content h3 {
+        color: #10b981;
       }
     }
   }
   
-  &.scheduling-card {
-    border: 2px solid #e5e7eb;
-    position: relative;
-    
+  &.weather-card {
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #8b5cf6, #7c3aed, #6d28d9);
-      z-index: 1;
+      background: linear-gradient(90deg, #06b6d4, #0891b2, #0e7490);
     }
     
     &:hover {
-      border-color: #8b5cf6;
-      
-      .image-fallback {
-        background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        transform: scale(1.05);
+      .project-content h3 {
+        color: #06b6d4;
       }
     }
   }
   
-  &.portfolio-card {
-    border: 2px solid #e5e7eb;
-    position: relative;
-    
+  &.dental-card {
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #f59e0b, #d97706, #b45309);
-      z-index: 1;
+      background: linear-gradient(90deg, #ec4899, #db2777, #be185d);
     }
     
     &:hover {
-      border-color: #f59e0b;
-      
-      .image-fallback {
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-        transform: scale(1.05);
+      .project-content h3 {
+        color: #ec4899;
       }
     }
   }
   
   &.harmony-card {
-    border: 2px solid #e5e7eb;
-    position: relative;
-    
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
       background: linear-gradient(90deg, #f59e0b, #ef4444, #ec4899);
-      z-index: 1;
     }
     
     &:hover {
-      border-color: #f59e0b;
-      
-      .iframe-container iframe {
-        transform: scale(1.02);
-      }
-      
-      .live-indicator {
-        background: rgba(245, 158, 11, 0.95);
-        
-        .live-dot {
-          animation-duration: 0.8s;
-        }
+      .project-content h3 {
+        color: #f59e0b;
       }
     }
   }
   
   &.advocacia-card {
-    border: 2px solid #e5e7eb;
+    &::before {
+      background: linear-gradient(90deg, #374151, #1f2937, #111827);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #374151;
+      }
+    }
+  }
+  
+  .project-content {
+    padding: 2rem 2.2rem 2.5rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.5) 100%);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     position: relative;
     
     &::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #374151, #1f2937, #111827);
-      z-index: 1;
+      left: 2.2rem;
+      right: 2.2rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
     }
-    
-    &:hover {
-      border-color: #374151;
-      
-      .iframe-container iframe {
-        transform: scale(1.02);
-      }
-      
-      .live-indicator.legal {
-        background: rgba(55, 65, 81, 0.95);
-        
-        .live-dot {
-          animation-duration: 0.8s;
-        }
-      }
-    }
-  }
-  
-  h3 {
-    padding: 1.5rem 1.5rem 0.5rem;
-    font-size: 1.3rem;
-    margin: 0;
-  }
-  
-  .project-content {
-    padding: 0 1.5rem 1.5rem;
     
     h3 {
-      padding: 1.5rem 0 0.5rem;
-      font-size: 1.3rem;
-      margin: 0;
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
       color: var(--dark-color);
+      font-weight: 800;
+      transition: all 0.4s ease;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+      &::before {
+        content: '';
+        width: 4px;
+        height: 24px;
+        background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+        opacity: 0;
+        transform: scaleY(0);
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
     }
     
     p {
-      margin: 0 0 1rem;
+      margin: 0;
       color: var(--text-color);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      opacity: 0.85;
+      font-weight: 400;
     }
   }
   
-  p {
-    padding: 0 1.5rem 1rem;
-    color: var(--text-color);
-    font-size: 0.95rem;
-    line-height: 1.6;
+  &:hover .project-content h3::before {
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
 
 .project-image {
   position: relative;
-  height: 200px;
-  border-radius: 10px;
+  height: 260px;
   overflow: hidden;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
+    pointer-events: none;
+    z-index: 5;
+  }
   
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  
   
   .image-fallback {
     width: 100%;
@@ -1008,42 +957,16 @@ const scrollToProjects = () => {
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 10px;
     overflow: hidden;
-    background: #f8f9fa;
+    background: #ffffff;
     
     iframe {
       width: 100%;
       height: 100%;
       border: none;
       display: block;
-      transition: all 0.3s ease;
-    }
-    
-    .live-indicator {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(220, 38, 38, 0.95);
-      backdrop-filter: blur(10px);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      z-index: 10;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      
-      .live-dot {
-        width: 6px;
-        height: 6px;
-        background: white;
-        border-radius: 50%;
-        animation: pulse-live 1.5s ease-in-out infinite;
-      }
+      transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      filter: brightness(0.98);
     }
   }
 }
@@ -1054,37 +977,76 @@ const scrollToProjects = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(31, 41, 55, 0.8);
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.97), rgba(139, 92, 246, 0.97));
+  backdrop-filter: blur(12px) saturate(180%);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  &:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .project-actions {
   display: flex;
-  gap: 1rem;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0 1.5rem 1.5rem;
+  gap: 1.2rem;
+  flex-direction: column;
+  z-index: 20;
   
-  span {
-    background-color: rgba(79, 70, 229, 0.1);
-    color: var(--primary-color);
-    font-size: 0.8rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+  
+  .btn {
+    min-width: 140px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    
+    &.small {
+      padding: 0.9rem 1.8rem;
+    }
+    
+    &:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
   }
 }
 
+
 .view-all-projects {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 // Why Choose My Work Section
@@ -1474,56 +1436,35 @@ const scrollToProjects = () => {
   }
   
   .project-card {
-    &.harmony-card,
-    &.advocacia-card,
-    &.smartfiles-card {
-      .project-image {
-        height: 180px;
-      }
+    border-radius: 18px;
+    
+    &:hover {
+      transform: translateY(-12px) scale(1.02);
+    }
+    
+    .project-image {
+      height: 220px;
       
-      .iframe-container {
-        iframe {
-          transform: scale(0.8);
-          transform-origin: top left;
-          width: 125%;
-          height: 125%;
-        }
-        
-        .live-indicator {
-          right: 5px;
-          top: 5px;
-          padding: 0.2rem 0.6rem;
-          font-size: 0.65rem;
-          
-          .live-dot {
-            width: 5px;
-            height: 5px;
-          }
-        }
+      &::after {
+        height: 60px;
       }
     }
     
     .project-content {
-      padding: 1rem;
+      padding: 1.8rem 1.8rem 2rem;
       
       h3 {
-        font-size: 1.2rem;
-        padding: 0.5rem 0;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        
+        &::before {
+          height: 20px;
+        }
       }
       
       p {
-        font-size: 0.9rem;
-        margin-bottom: 0.8rem;
-      }
-    }
-    
-    .project-tags {
-      padding: 0 1rem 1rem;
-      gap: 0.4rem;
-      
-      span {
-        font-size: 0.75rem;
-        padding: 0.2rem 0.6rem;
+        font-size: 0.98rem;
+        line-height: 1.7;
       }
     }
   }
@@ -1553,40 +1494,55 @@ const scrollToProjects = () => {
     padding: 4rem 1rem;
   }
   
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+  }
+  
+  .projects-section {
+    padding: 4rem 1.5rem;
+  }
+  
   .project-card {
-    &.harmony-card,
-    &.advocacia-card,
-    &.smartfiles-card {
-      .project-image {
-        height: 160px;
-      }
+    border-radius: 16px;
+    
+    &:hover {
+      transform: translateY(-10px) scale(1.01);
+    }
+    
+    .project-image {
+      height: 200px;
       
-      .iframe-container {
-        iframe {
-          transform: scale(0.7);
-          width: 143%;
-          height: 143%;
-        }
+      &::after {
+        height: 50px;
       }
     }
     
     .project-content {
+      padding: 1.5rem 1.5rem 1.8rem;
+      
       h3 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        
+        &::before {
+          height: 18px;
+          width: 3px;
+        }
       }
       
       p {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
       }
     }
     
     .project-actions {
-      flex-direction: column;
-      gap: 0.5rem;
+      gap: 1rem;
       
       .btn {
-        font-size: 0.85rem;
-        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        padding: 0.75rem 1.3rem;
+        min-width: 120px;
       }
     }
   }
