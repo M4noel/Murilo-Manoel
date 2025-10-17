@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import Footer from './components/Footer.vue';
+import ChatWidget from './components/ChatWidget.vue';
 
 const router = useRouter();
 const isMenuOpen = ref(false);
@@ -51,6 +52,9 @@ onMounted(() => {
         </transition>
       </router-view>
     </main>
+    
+    <!-- Chat Widget -->
+    <ChatWidget />
   </div>
    <Footer />
 </template>

@@ -10,6 +10,7 @@ Um portfólio moderno e responsivo construído com Vue.js 3, Vite e SCSS, aprese
 - **Animações Fluidas**: Transições suaves entre páginas e hover effects
 - **Menu Mobile**: Hamburger menu interativo para dispositivos móveis
 - **Tema Customizável**: Sistema de variáveis CSS para fácil personalização
+- **💬 Chat Integrado com Telegram**: Sistema de chat em tempo real conectado ao Telegram Bot
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -76,7 +77,10 @@ npm run preview
 src/
 ├── components/          # Componentes reutilizáveis
 │   ├── Footer.vue      # Rodapé do site
+│   ├── ChatWidget.vue  # Widget de chat integrado
 │   └── HelloWorld.vue  # Componente inicial
+├── composables/        # Lógica reutilizável
+│   └── useChat.js      # Gerenciamento do chat
 ├── views/              # Páginas principais
 │   ├── Home.vue        # Página inicial
 │   ├── About.vue       # Sobre mim
@@ -103,6 +107,16 @@ src/
 - Formulário de contato
 - Links para redes sociais
 - Informações de contato
+
+### 💬 Chat Integrado
+- Widget flutuante no canto inferior direito
+- Mensagens enviadas diretamente para o Telegram
+- Respostas do Telegram aparecem automaticamente no chat
+- Histórico salvo no localStorage do navegador
+- Badge de notificação para mensagens não lidas
+- Design responsivo e animações suaves
+
+**📖 Documentação completa:** Veja [CHAT_SETUP.md](CHAT_SETUP.md) e [INSTRUCOES_CHAT.md](INSTRUCOES_CHAT.md)
 
 ## 🌐 Deploy
 

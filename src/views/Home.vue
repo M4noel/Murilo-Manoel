@@ -488,32 +488,54 @@ const scrollToProjects = () => {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
   animation: bounce 2s infinite;
+  z-index: 10;
   
   &:hover {
     transform: translateX(-50%) translateY(-5px);
     animation: none;
+    
+    i {
+      color: white;
+    }
   }
   
   span {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    opacity: 0.7;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
   }
   
   i {
-    font-size: 1.2rem;
-    color: var(--primary-color);
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  }
+  
+  @media (max-width: 768px) {
+    bottom: 2rem;
+    
+    span {
+      font-size: 0.9rem;
+    }
+    
+    i {
+      font-size: 1.3rem;
+    }
   }
 }
 
