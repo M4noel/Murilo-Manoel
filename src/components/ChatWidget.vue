@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, nextTick } from 'vue';
 import { useChat } from '../composables/useChat';
 
-const { messages, sendMessage, loadMessages, isLoading, startPolling, stopPolling } = useChat();
+const { messages, sendMessage, loadMessages, isLoading, startPolling, stopPolling, addMessage } = useChat();
 const isOpen = ref(false);
 const messageInput = ref('');
 const nameInput = ref('');
@@ -73,6 +73,10 @@ const handleSaveContact = () => {
   localStorage.setItem('userName', name);
   localStorage.setItem('userPhone', phone);
   showContactForm.value = false;
+  
+  // Adicionar mensagem de boas-vindas automática
+  const welcomeMessage = `Olá, ${name}! 👋\n\nObrigado por entrar em contato! Em breve responderei sua mensagem.\n\nPor favor, envie sua dúvida ou solicitação.`;
+  addMessage(welcomeMessage, false);
   
   nextTick(() => {
     scrollToBottom();
