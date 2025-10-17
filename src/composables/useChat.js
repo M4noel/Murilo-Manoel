@@ -72,10 +72,10 @@ export function useChat() {
       if (data.success) {
         console.log('✅ Mensagem enviada para o Telegram com sucesso!');
         
-        // Se há notificação de fila, mostrar para o usuário
-        if (data.queueNotification) {
+        // Se há notificação do sistema (chat iniciado ou fila), mostrar para o usuário
+        if (data.systemNotification) {
           setTimeout(() => {
-            addMessage(data.queueNotification, false);
+            addMessage(data.systemNotification, false);
           }, 500);
         }
       } else {
