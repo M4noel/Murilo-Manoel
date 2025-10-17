@@ -70,8 +70,14 @@ export function useChat() {
       const data = await response.json();
 
       if (data.success) {
-        // Não enviar mensagem automática - você responderá manualmente
         console.log('✅ Mensagem enviada para o Telegram com sucesso!');
+        
+        // Se há notificação de fila, mostrar para o usuário
+        if (data.queueNotification) {
+          setTimeout(() => {
+            addMessage(data.queueNotification, false);
+          }, 500);
+        }
       } else {
         throw new Error(data.error || 'Erro ao enviar mensagem');
       }
