@@ -74,10 +74,35 @@ const toggleChat = () => {
   if (isOpen.value) {
     hasUnreadMessages.value = false;
     localStorage.setItem('lastReadTime', Date.now().toString());
+    
+    // Se o chat foi encerrado, resetar tudo
+    if (chatEnded.value) {
+      resetChat();
+    }
+    
     nextTick(() => {
       scrollToBottom();
     });
   }
+};
+
+// Resetar chat completamente
+const resetChat = () => {
+  chatEnded.value = false;
+  showContactForm.value = true;
+  messages.value.length = 0;
+  userName.value = '';
+  userPhone.value = '';
+  nameInput.value = '';
+  phoneInput.value = '';
+  messageInput.value = '';
+  
+  // Gerar novo sessionId
+  const newSessionId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  sessionId.value = newSessionId;
+  localStorage.setItem('chatSessionId', newSessionId);
+  
+  console.log('🔄 Chat resetado - novo sessionId:', newSessionId);
 };
 
 // Salvar dados do usuário

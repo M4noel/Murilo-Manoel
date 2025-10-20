@@ -182,6 +182,16 @@ export function useChat() {
         // Parar o polling
         stopPolling();
         
+        // Limpar localStorage após 2 segundos (para usuário ver a mensagem)
+        setTimeout(() => {
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.removeItem('chatSessionId');
+          localStorage.removeItem('userName');
+          localStorage.removeItem('userPhone');
+          localStorage.removeItem('conversationStatus');
+          console.log('🧹 localStorage limpo');
+        }, 2000);
+        
         return true;
       } else {
         throw new Error(data.message || 'Erro ao encerrar chat');
