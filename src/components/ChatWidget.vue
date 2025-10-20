@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, nextTick } from 'vue';
 import { useChat } from '../composables/useChat';
 
-const { messages, sendMessage, loadMessages, isLoading, startPolling, stopPolling, addMessage } = useChat();
+const { messages, sendMessage, loadMessages, isLoading, startPolling, stopPolling, addMessage, endChat } = useChat();
 const isOpen = ref(false);
 const messageInput = ref('');
 const nameInput = ref('');
@@ -13,6 +13,25 @@ const showContactForm = ref(true);
 const userName = ref('');
 const userPhone = ref('');
 const sessionId = ref('');
+const chatEnded = ref(false);
+const showEndConfirmation = ref(false);
+
+// Encerrar chat
+const handleEndChat = async () => {
+  showEndConfirmation.value = true;
+};
+
+const confirmEndChat = async () => {
+  const success = await endChat(userName.value, userPhone.value, sessionId.value);
+  if (success) {
+    chatEnded.value = true;
+    showEndConfirmation.value = false;
+  }
+};
+
+const cancelEndChat = () => {
+  showEndConfirmation.value = false;
+};
 
 // Carregar mensagens ao montar
 onMounted(() => {
@@ -73,10 +92,6 @@ const handleSaveContact = () => {
   localStorage.setItem('userName', name);
   localStorage.setItem('userPhone', phone);
   showContactForm.value = false;
-  
-  // Adicionar mensagem de boas-vindas automática
-  const welcomeMessage = `Olá, ${name}! 👋\n\nObrigado por entrar em contato! Em breve responderei sua mensagem.\n\nPor favor, envie sua dúvida ou solicitação.`;
-  addMessage(welcomeMessage, false);
   
   nextTick(() => {
     scrollToBottom();
@@ -179,6 +194,14 @@ const groupedMessages = computed(() => {
               </span>
             </div>
           </div>
+          <button 
+            v-if="!showContactForm && !chatEnded" 
+            @click="handleEndChat" 
+            class="end-chat-btn"
+            title="Encerrar conversa"
+          >
+            <i class="fas fa-times-circle"></i>
+          </button>
         </div>
 
         <!-- Formulário de Contato -->
@@ -278,8 +301,29 @@ const groupedMessages = computed(() => {
           </div>
         </div>
 
+        <!-- Modal de Confirmação de Encerramento -->
+        <div v-if="showEndConfirmation" class="confirmation-modal">
+          <div class="modal-content">
+            <div class="modal-icon">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h3>Encerrar Conversa?</h3>
+            <p>Tem certeza que deseja encerrar esta conversa?</p>
+            <div class="modal-buttons">
+              <button @click="cancelEndChat" class="btn-cancel">
+                <i class="fas fa-times"></i>
+                Cancelar
+              </button>
+              <button @click="confirmEndChat" class="btn-confirm">
+                <i class="fas fa-check"></i>
+                Sim, Encerrar
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- Input -->
-        <div v-if="!showContactForm" class="chat-input">
+        <div v-if="!showContactForm && !chatEnded" class="chat-input">
           <form @submit.prevent="handleSendMessage">
             <input 
               v-model="messageInput"
@@ -295,6 +339,12 @@ const groupedMessages = computed(() => {
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
+        </div>
+
+        <!-- Mensagem de Chat Encerrado -->
+        <div v-if="chatEnded" class="chat-ended-message">
+          <i class="fas fa-check-circle"></i>
+          <p>Chat encerrado. Obrigado pelo contato!</p>
         </div>
       </div>
     </transition>
@@ -381,6 +431,9 @@ const groupedMessages = computed(() => {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   color: white;
   padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   
   .header-content {
     display: flex;
@@ -421,6 +474,30 @@ const groupedMessages = computed(() => {
         border-radius: 50%;
         animation: pulse 2s infinite;
       }
+    }
+  }
+
+  .end-chat-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 }
@@ -844,6 +921,144 @@ const groupedMessages = computed(() => {
   50% {
     opacity: 0.5;
     transform: scale(0.95);
+  }
+}
+
+// Modal de Confirmação
+.confirmation-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+
+    .modal-icon {
+      width: 60px;
+      height: 60px;
+      background: #fef3c7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 2rem;
+      color: #f59e0b;
+    }
+
+    h3 {
+      margin: 0 0 0.5rem;
+      color: var(--dark-color);
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin: 0 0 1.5rem;
+      color: var(--text-color);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+
+      button {
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        &.btn-cancel {
+          background: #f3f4f6;
+          color: var(--text-color);
+
+          &:hover {
+            background: #e5e7eb;
+          }
+        }
+
+        &.btn-confirm {
+          background: linear-gradient(135deg, #ef4444, #dc2626);
+          color: white;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+          }
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}
+
+// Mensagem de Chat Encerrado
+.chat-ended-message {
+  padding: 1.5rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #10b981;
+  font-weight: 600;
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

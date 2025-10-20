@@ -96,9 +96,10 @@ export function useChat() {
   const checkNewMessages = async () => {
     try {
       const sessionId = localStorage.getItem('chatSessionId');
-      console.log('🔍 Verificando novas mensagens... SessionID:', sessionId);
+      const lastMessageId = localStorage.getItem('lastMessageId') || '0';
+      console.log('🔍 Verificando novas mensagens... SessionID:', sessionId, 'LastMessageId:', lastMessageId);
       
-      const response = await fetch(`${API_URL}/api/messages?sessionId=${sessionId}`);
+      const response = await fetch(`${API_URL}/api/messages?sessionId=${sessionId}&lastMessageId=${lastMessageId}`);
       const data = await response.json();
 
       console.log('📨 Resposta da API:', data);
@@ -108,15 +109,28 @@ export function useChat() {
         
         // Adicionar novas mensagens que ainda não existem
         let newCount = 0;
+        let maxMessageId = parseInt(lastMessageId);
+        
         data.messages.forEach(msg => {
           const exists = messages.value.some(m => m.telegramId === msg.id);
           if (!exists && !msg.isUser) {
-            console.log('➕ Nova mensagem do Telegram:', msg.text);
+            console.log('➕ Nova mensagem:', msg.text, msg.isSystemMessage ? '(Sistema)' : '(Telegram)');
             addMessage(msg.text, false);
             messages.value[messages.value.length - 1].telegramId = msg.id;
+            messages.value[messages.value.length - 1].isSystemMessage = msg.isSystemMessage || false;
             newCount++;
+            
+            // Atualizar o maior ID de mensagem recebido
+            if (msg.id > maxMessageId) {
+              maxMessageId = msg.id;
+            }
           }
         });
+        
+        // Salvar o último ID de mensagem processado
+        if (maxMessageId > parseInt(lastMessageId)) {
+          localStorage.setItem('lastMessageId', maxMessageId.toString());
+        }
         
         if (newCount > 0) {
           console.log(`✅ ${newCount} nova(s) mensagem(ns) adicionada(s) ao chat!`);
@@ -124,8 +138,61 @@ export function useChat() {
       } else {
         console.log('📭 Nenhuma mensagem nova');
       }
+      
+      // Verificar status da conversa
+      if (data.conversationStatus) {
+        const status = data.conversationStatus.status;
+        console.log('📊 Status da conversa:', status);
+        
+        // Salvar status no localStorage para referência
+        const previousStatus = localStorage.getItem('conversationStatus');
+        localStorage.setItem('conversationStatus', status);
+        
+        // Se o status mudou para 'ended' e ainda não mostramos a mensagem
+        if (status === 'ended' && previousStatus !== 'ended') {
+          console.log('🔴 Conversa encerrada - verificando se já tem mensagem de encerramento');
+          // A mensagem de encerramento já deve vir do servidor nas mensagens do sistema
+        }
+      }
     } catch (error) {
       console.error('❌ Erro ao verificar novas mensagens:', error);
+    }
+  };
+
+  // Encerrar chat pelo usuário
+  const endChat = async (userName = '', userPhone = '', sessionId = '') => {
+    try {
+      const response = await fetch(`${API_URL}/api/user-end-chat`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sessionId: sessionId,
+          userName: userName,
+          userPhone: userPhone
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        console.log('✅ Chat encerrado com sucesso!');
+        
+        // Adicionar mensagem de confirmação
+        addMessage('✅ Você encerrou o chat. Obrigado pelo contato!', false);
+        
+        // Parar o polling
+        stopPolling();
+        
+        return true;
+      } else {
+        throw new Error(data.message || 'Erro ao encerrar chat');
+      }
+    } catch (error) {
+      console.error('❌ Erro ao encerrar chat:', error);
+      addMessage('Erro ao encerrar o chat. Tente novamente.', false);
+      return false;
     }
   };
 
@@ -169,6 +236,7 @@ export function useChat() {
     checkNewMessages,
     clearMessages,
     startPolling,
-    stopPolling
+    stopPolling,
+    endChat
   };
 }
