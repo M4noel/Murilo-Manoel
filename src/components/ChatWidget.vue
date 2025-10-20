@@ -435,7 +435,7 @@ const groupedMessages = computed(() => {
   bottom: 80px;
   right: 0;
   width: 380px;
-  height: 550px;
+  height: 460px;
   background: white;
   border-radius: 20px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
@@ -548,6 +548,9 @@ const groupedMessages = computed(() => {
   text-align: center;
   max-width: 320px;
   width: 100%;
+  margin-top: 0;
+  height: 290px;
+  overflow-y: scroll;
 
   .contact-icon {
     width: 70px;
