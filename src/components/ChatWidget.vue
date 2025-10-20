@@ -93,6 +93,9 @@ const handleSaveContact = () => {
   localStorage.setItem('userPhone', phone);
   showContactForm.value = false;
   
+  // Adicionar mensagem de boas-vindas imediatamente
+  addMessage('✅ Chat iniciado! Em breve você será atendido.', false);
+  
   nextTick(() => {
     scrollToBottom();
   });

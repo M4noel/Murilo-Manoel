@@ -96,10 +96,9 @@ export function useChat() {
   const checkNewMessages = async () => {
     try {
       const sessionId = localStorage.getItem('chatSessionId');
-      const lastMessageId = localStorage.getItem('lastMessageId') || '0';
-      console.log('🔍 Verificando novas mensagens... SessionID:', sessionId, 'LastMessageId:', lastMessageId);
+      console.log('🔍 Verificando novas mensagens... SessionID:', sessionId);
       
-      const response = await fetch(`${API_URL}/api/messages?sessionId=${sessionId}&lastMessageId=${lastMessageId}`);
+      const response = await fetch(`${API_URL}/api/messages?sessionId=${sessionId}`);
       const data = await response.json();
 
       console.log('📨 Resposta da API:', data);
@@ -109,28 +108,26 @@ export function useChat() {
         
         // Adicionar novas mensagens que ainda não existem
         let newCount = 0;
-        let maxMessageId = parseInt(lastMessageId);
         
         data.messages.forEach(msg => {
-          const exists = messages.value.some(m => m.telegramId === msg.id);
+          // Verificar se a mensagem já existe usando o ID único ou texto+timestamp
+          const exists = messages.value.some(m => {
+            // Se ambos têm telegramId, comparar por ID
+            if (m.telegramId && msg.id) {
+              return m.telegramId === msg.id;
+            }
+            // Caso contrário, comparar por texto e timestamp próximo (dentro de 2 segundos)
+            return m.text === msg.text && Math.abs(m.timestamp - msg.timestamp) < 2000;
+          });
+          
           if (!exists && !msg.isUser) {
-            console.log('➕ Nova mensagem:', msg.text, msg.isSystemMessage ? '(Sistema)' : '(Telegram)');
+            console.log('➕ Nova mensagem:', msg.text.substring(0, 50), msg.isSystemMessage ? '(Sistema)' : '(Telegram)');
             addMessage(msg.text, false);
             messages.value[messages.value.length - 1].telegramId = msg.id;
             messages.value[messages.value.length - 1].isSystemMessage = msg.isSystemMessage || false;
             newCount++;
-            
-            // Atualizar o maior ID de mensagem recebido
-            if (msg.id > maxMessageId) {
-              maxMessageId = msg.id;
-            }
           }
         });
-        
-        // Salvar o último ID de mensagem processado
-        if (maxMessageId > parseInt(lastMessageId)) {
-          localStorage.setItem('lastMessageId', maxMessageId.toString());
-        }
         
         if (newCount > 0) {
           console.log(`✅ ${newCount} nova(s) mensagem(ns) adicionada(s) ao chat!`);
