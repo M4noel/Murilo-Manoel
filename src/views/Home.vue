@@ -1,9 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import artistisseHome from '@/assets/img/site-home.png';
+import artistisseProduto from '@/assets/img/FireShot Capture 022 - Footer Artistisse - localhost.png';
 
 const router = useRouter();
 const isVisible = ref(false);
+const artistisseCurrentSlide = ref(0);
 
 onMounted(() => {
   setTimeout(() => {
@@ -13,6 +16,18 @@ onMounted(() => {
 
 const scrollToProjects = () => {
   document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+};
+
+const nextSlideArtistisse = () => {
+  if (artistisseCurrentSlide.value < 1) {
+    artistisseCurrentSlide.value++;
+  }
+};
+
+const prevSlideArtistisse = () => {
+  if (artistisseCurrentSlide.value > 0) {
+    artistisseCurrentSlide.value--;
+  }
 };
 </script>
 
@@ -425,6 +440,45 @@ const scrollToProjects = () => {
           <div class="project-content">
             <h3>Cálculo Revisional</h3>
             <p>Manutenção e ajustes em plataforma de cálculo revisional. Otimizações de performance e melhorias na experiência do usuário.</p>
+          </div>
+        </div>
+        
+        <!-- Artistisse E-commerce -->
+        <div class="project-card artistisse-card" data-aos="fade-up" data-aos-delay="1500">
+          <div class="project-image">
+            <div class="carousel-wrapper">
+              <div class="carousel-track" :style="{ transform: `translateX(-${artistisseCurrentSlide * 100}%)` }">
+                <div class="carousel-slide">
+                  <img :src="artistisseHome" alt="Artistisse - Página Principal" />
+                </div>
+                <div class="carousel-slide">
+                  <img :src="artistisseProduto" alt="Artistisse - Página de Produto" />
+                </div>
+              </div>
+              <button class="carousel-btn prev" @click.stop="prevSlideArtistisse" v-if="artistisseCurrentSlide > 0">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-btn next" @click.stop="nextSlideArtistisse" v-if="artistisseCurrentSlide < 1">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+              <div class="carousel-indicators">
+                <span 
+                  v-for="n in 2" 
+                  :key="n" 
+                  :class="['indicator', { active: artistisseCurrentSlide === n - 1 }]"
+                  @click.stop="artistisseCurrentSlide = n - 1"
+                ></span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Artistisse - E-commerce de Camisetas</h3>
+            <p>E-commerce moderno para venda de camisetas com designs exclusivos de artistas. Sistema completo com carrossel de produtos, carrinho de compras e checkout integrado.</p>
           </div>
         </div>
         
@@ -1229,6 +1283,22 @@ const scrollToProjects = () => {
     }
   }
   
+  &.artistisse-card {
+    &::before {
+      background: linear-gradient(90deg, #7c3aed, #00bcd4, #7c3aed);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #7c3aed;
+      }
+      
+      .carousel-wrapper img {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
   .project-content {
     padding: 2rem 2.2rem 2.5rem;
     background: transparent;
@@ -1338,6 +1408,95 @@ const scrollToProjects = () => {
       display: block;
       transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
       filter: brightness(0.98);
+    }
+  }
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(124, 58, 237, 0.9);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 15;
+    font-size: 18px;
+    
+    &:hover {
+      background: rgba(124, 58, 237, 1);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    &.prev {
+      left: 15px;
+    }
+    
+    &.next {
+      right: 15px;
+    }
+  }
+  
+  .carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 15;
+    
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      padding: 0;
+      
+      &.active {
+        background: #7c3aed;
+        transform: scale(1.2);
+      }
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
     }
   }
 }
