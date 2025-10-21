@@ -236,6 +236,198 @@ const scrollToProjects = () => {
           </div>
         </div>
         
+        <!-- AgroClip -->
+        <div class="project-card agroclip-card" data-aos="fade-up" data-aos-delay="700">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://agroclip.com.br/" 
+                title="AgroClip"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://agroclip.com.br/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>AgroClip</h3>
+            <p>Desenvolvimento e manutenção de plataforma para o setor agrícola. Sistema completo com gestão de dados e interface moderna.</p>
+          </div>
+        </div>
+        
+        <!-- GA Advising -->
+        <div class="project-card gaadvising-card" data-aos="fade-up" data-aos-delay="800">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://gaadvising.com/" 
+                title="GA Advising"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://gaadvising.com/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>GA Advising</h3>
+            <p>Desenvolvimento e manutenção de site institucional para consultoria. Design profissional com foco em conversão e credibilidade.</p>
+          </div>
+        </div>
+        
+        <!-- Receitas.ai -->
+        <div class="project-card receitas-card" data-aos="fade-up" data-aos-delay="900">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://www.receitas.ai/" 
+                title="Receitas.ai"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://www.receitas.ai/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Receitas.ai</h3>
+            <p>Desenvolvimento e manutenção de plataforma de receitas com inteligência artificial. Interface intuitiva e sistema de busca avançado.</p>
+          </div>
+        </div>
+        
+        <!-- Eleve Ads -->
+        <div class="project-card eleveads-card" data-aos="fade-up" data-aos-delay="1000">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://site-novo.dev-eleveads.com.br/" 
+                title="Eleve Ads"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://site-novo.dev-eleveads.com.br/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Eleve Ads</h3>
+            <p>Desenvolvimento e manutenção de site para agência de marketing digital. Design moderno com foco em resultados e performance.</p>
+          </div>
+        </div>
+        
+        <!-- IBC Dogs -->
+        <div class="project-card ibcdogs-card" data-aos="fade-up" data-aos-delay="1100">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://ibcdogs.com.br/" 
+                title="IBC Dogs"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://ibcdogs.com.br/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>IBC Dogs</h3>
+            <p>Desenvolvimento e manutenção de site para centro de treinamento canino. Sistema de agendamento e galeria de serviços.</p>
+          </div>
+        </div>
+        
+        <!-- Reis Revisional -->
+        <div class="project-card reisrevisional-card" data-aos="fade-up" data-aos-delay="1200">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://reisrevisional.com.br/" 
+                title="Reis Revisional"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://reisrevisional.com.br/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Reis Revisional</h3>
+            <p>Desenvolvimento e manutenção de site para escritório de advocacia especializado em ações revisionais. Design profissional e confiável.</p>
+          </div>
+        </div>
+        
+        <!-- HD Landing Page -->
+        <div class="project-card hdlp-card" data-aos="fade-up" data-aos-delay="1300">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://hd-lp.dev-eleveads.com.br/" 
+                title="HD Landing Page"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://hd-lp.dev-eleveads.com.br/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>HD Landing Page</h3>
+            <p>Landing page desenvolvida com foco em alta conversão. Design moderno, responsivo e otimizado para captura de leads.</p>
+          </div>
+        </div>
+        
+        <!-- Cálculo Revisional -->
+        <div class="project-card calculorevisional-card" data-aos="fade-up" data-aos-delay="1400">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://www.site.calculorevisional.dev-eleveads.com.br/" 
+                title="Cálculo Revisional"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://www.site.calculorevisional.dev-eleveads.com.br/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Cálculo Revisional</h3>
+            <p>Manutenção e ajustes em plataforma de cálculo revisional. Otimizações de performance e melhorias na experiência do usuário.</p>
+          </div>
+        </div>
+        
       </div>
       
       <div class="view-all-projects" data-aos="fade-up">
@@ -937,6 +1129,102 @@ const scrollToProjects = () => {
     &:hover {
       .project-content h3 {
         color: #374151;
+      }
+    }
+  }
+  
+  &.agroclip-card {
+    &::before {
+      background: linear-gradient(90deg, #22c55e, #16a34a, #15803d);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #22c55e;
+      }
+    }
+  }
+  
+  &.gaadvising-card {
+    &::before {
+      background: linear-gradient(90deg, #0ea5e9, #0284c7, #0369a1);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #0ea5e9;
+      }
+    }
+  }
+  
+  &.receitas-card {
+    &::before {
+      background: linear-gradient(90deg, #f97316, #ea580c, #c2410c);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #f97316;
+      }
+    }
+  }
+  
+  &.eleveads-card {
+    &::before {
+      background: linear-gradient(90deg, #8b5cf6, #7c3aed, #6d28d9);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #8b5cf6;
+      }
+    }
+  }
+  
+  &.ibcdogs-card {
+    &::before {
+      background: linear-gradient(90deg, #eab308, #ca8a04, #a16207);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #eab308;
+      }
+    }
+  }
+  
+  &.reisrevisional-card {
+    &::before {
+      background: linear-gradient(90deg, #dc2626, #b91c1c, #991b1b);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #dc2626;
+      }
+    }
+  }
+  
+  &.hdlp-card {
+    &::before {
+      background: linear-gradient(90deg, #06b6d4, #14b8a6, #0d9488);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #06b6d4;
+      }
+    }
+  }
+  
+  &.calculorevisional-card {
+    &::before {
+      background: linear-gradient(90deg, #a855f7, #9333ea, #7e22ce);
+    }
+    
+    &:hover {
+      .project-content h3 {
+        color: #a855f7;
       }
     }
   }
