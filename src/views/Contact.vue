@@ -1,8 +1,18 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
+// Carregar script do LinkedIn
+onMounted(() => {
+  const script = document.createElement('script');
+  script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+  script.async = true;
+  script.defer = true;
+  script.type = 'text/javascript';
+  document.body.appendChild(script);
+});
 const formData = ref({
   name: '',
   email: '',
@@ -193,12 +203,12 @@ const submitForm = async () => {
       </div>
     </section>
     
-    <!-- Map Section -->
-    <section class="map-section" data-aos="fade-up">
-      <div class="map-container">
-        <!-- Placeholder para um mapa real -->
-        <div class="map-placeholder">
-          <div class="map-fallback">Mapa de Localização</div>
+    <!-- LinkedIn Badge Section -->
+    <section class="linkedin-section" data-aos="fade-up">
+      <div class="linkedin-container">
+        <h2>Conecte-se Comigo no LinkedIn</h2>
+        <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="murilo-manoel" data-version="v1">
+          <a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/murilo-manoel?trk=profile-badge">Murilo Manoel</a>
         </div>
       </div>
     </section>
@@ -267,7 +277,7 @@ const submitForm = async () => {
 // Contact Section
 .contact-section {
   padding: 6rem 2rem;
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .contact-grid {
@@ -282,12 +292,13 @@ const submitForm = async () => {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0,0,0,.06);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
   border-radius: 18px;
   padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,.06);
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
 }
 
 // Contact Info
@@ -476,38 +487,40 @@ form {
   }
 }
 
-// Map Section
-.map-section {
-  padding: 0;
-  background-color: #f8fafc;
+// LinkedIn Section
+.linkedin-section {
+  padding: 4rem 2rem;
+  background-color: var(--light-color);
+  text-align: center;
 }
 
-.map-container {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-
-.map-placeholder {
-  width: 100%;
-  height: 100%;
+.linkedin-container {
+  max-width: 800px;
+  margin: 0 auto;
   
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary-color);
+    }
   }
   
-  .map-fallback {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e5e7eb;
-    color: #6b7280;
-    font-size: 1.5rem;
-    font-weight: 500;
+  .LI-profile-badge {
+    display: inline-block;
+    margin-top: 1.5rem;
   }
 }
 

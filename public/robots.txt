@@ -1,0 +1,12 @@
+# robots.txt para Murilo Manoel - Portfólio
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://murilomanoel.com.br/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10

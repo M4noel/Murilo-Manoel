@@ -487,10 +487,6 @@ const scrollToProjects = () => {
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -500,9 +496,10 @@ const scrollToProjects = () => {
   transition: all 0.3s ease;
   animation: bounce 2s infinite;
   z-index: 10;
+  margin-top: 3rem;
   
   &:hover {
-    transform: translateX(-50%) translateY(-5px);
+    transform: translateY(-5px);
     animation: none;
     
     i {
@@ -609,7 +606,7 @@ const scrollToProjects = () => {
 // Services Section
 .services-section {
   padding: 6rem 2rem;
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .section-title {
@@ -660,7 +657,7 @@ const scrollToProjects = () => {
 }
 
 .service-card {
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 15px;
   padding: 2.5rem 2rem;
   box-shadow: var(--shadow-light);
@@ -668,6 +665,7 @@ const scrollToProjects = () => {
   text-align: center;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--border-color);
   
   &::before {
     content: '';
@@ -693,12 +691,14 @@ const scrollToProjects = () => {
   h3 {
     margin: 1.5rem 0 1rem;
     font-size: 1.3rem;
+    color: var(--text-color);
   }
   
   p {
+    line-height: 1.7;
     color: var(--text-color);
+    opacity: 0.8;
     font-size: 0.95rem;
-    line-height: 1.6;
   }
 }
 
@@ -747,7 +747,7 @@ const scrollToProjects = () => {
 // Projects Section
 .projects-section {
   padding: 7rem 2rem;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+  background: var(--light-color);
   position: relative;
   overflow: hidden;
   
@@ -805,7 +805,7 @@ const scrollToProjects = () => {
 }
 
 .project-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  background: var(--card-bg);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06), 
@@ -943,7 +943,7 @@ const scrollToProjects = () => {
   
   .project-content {
     padding: 2rem 2.2rem 2.5rem;
-    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.5) 100%);
+    background: transparent;
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     position: relative;
     
@@ -960,7 +960,7 @@ const scrollToProjects = () => {
     h3 {
       font-size: 1.5rem;
       margin: 0 0 1rem;
-      color: var(--dark-color);
+      color: var(--text-color);
       font-weight: 800;
       transition: all 0.4s ease;
       line-height: 1.3;
@@ -1001,7 +1001,7 @@ const scrollToProjects = () => {
   position: relative;
   height: 260px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  background: var(--light-color);
   
   &::after {
     content: '';
@@ -1041,7 +1041,7 @@ const scrollToProjects = () => {
     height: 100%;
     position: relative;
     overflow: hidden;
-    background: #ffffff;
+    background: var(--card-bg);
     
     iframe {
       width: 100%;
@@ -1210,7 +1210,7 @@ const scrollToProjects = () => {
 // Why Choose My Work Section
 .why-choose-section {
   padding: 6rem 2rem;
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .why-choose-container {
@@ -1233,7 +1233,7 @@ const scrollToProjects = () => {
 }
 
 .why-choose-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  background: var(--card-bg);
   border-radius: 24px;
   padding: 2.5rem 1.5rem;
   text-align: center;
@@ -1295,7 +1295,7 @@ const scrollToProjects = () => {
     font-size: 1.2rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--text-color);
     line-height: 1.3;
     letter-spacing: -0.3px;
   }
@@ -1321,12 +1321,11 @@ const scrollToProjects = () => {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0;
-    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    background: var(--card-bg);
     border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1),
-                0 5px 20px rgba(79, 70, 229, 0.05);
-    border: 2px solid rgba(79, 70, 229, 0.08);
+    box-shadow: var(--shadow-heavy);
+    border: 2px solid var(--border-color);
     position: relative;
     
     &::before {
@@ -1465,7 +1464,7 @@ const scrollToProjects = () => {
         }
         
         &.secondary {
-          background: white;
+          background: var(--card-bg);
           color: var(--primary-color);
           border: 2px solid var(--primary-color);
           
@@ -1546,7 +1545,7 @@ const scrollToProjects = () => {
 // GitHub Section
 .github-section {
   padding: 7rem 2rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+  background: var(--bg-color);
   overflow: hidden;
   position: relative;
   
@@ -1573,12 +1572,11 @@ const scrollToProjects = () => {
 }
 
 .github-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  background: var(--card-bg);
   border-radius: 30px;
   padding: 3rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08),
-              0 5px 20px rgba(79, 70, 229, 0.05);
-  border: 2px solid rgba(79, 70, 229, 0.08);
+  box-shadow: var(--shadow-heavy);
+  border: 2px solid var(--border-color);
   position: relative;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   
@@ -1744,9 +1742,9 @@ const scrollToProjects = () => {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  background: white;
-  border: 2px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-heavy);
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   
   &:hover {
@@ -1866,31 +1864,35 @@ const scrollToProjects = () => {
   
   h2 {
     font-size: 2.5rem;
-    font-weight: 700;
     margin-bottom: 1.5rem;
   }
   
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
   p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    line-height: 1.7;
+    color: var(--text-color);
     opacity: 0.9;
   }
 }
 
-// Buttons
 .btn {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   outline: none;
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
   
   &::before {
     content: '';
@@ -2103,8 +2105,9 @@ const scrollToProjects = () => {
       }
     }
   }
-}
-.last-card {
-  left: 110%;
+  
+  .last-card {
+    left: 110%;
+  }
 }
 </style>

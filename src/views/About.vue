@@ -679,7 +679,7 @@ onMounted(() => {
 // About Cards Section
 .about-cards-section {
   padding: 6rem 0;
-  background: linear-gradient(180deg, #f8fafc 0%, white 100%);
+  background: var(--bg-color);
 }
 
 .about-cards-grid {
@@ -690,11 +690,11 @@ onMounted(() => {
 }
 
 .info-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-color);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -747,7 +747,7 @@ onMounted(() => {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--text-color);
   }
   
   p {
@@ -769,7 +769,7 @@ onMounted(() => {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    color: var(--dark-color);
+    color: var(--text-color);
   }
   
   .lead {
@@ -908,7 +908,7 @@ onMounted(() => {
 // Experience Section
 .experience-section {
   padding: 6rem 2rem;
-  background-color: #f8fafc;
+  background-color: var(--bg-color);
 }
 
 .section-title {
@@ -970,7 +970,8 @@ onMounted(() => {
 }
 
 .timeline-content {
-  background-color: white;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -978,6 +979,7 @@ onMounted(() => {
   h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    color: var(--text-color);
   }
 }
 
@@ -990,10 +992,13 @@ onMounted(() => {
   .company {
     font-weight: 600;
     color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
   
   .period {
-    color: #6b7280;
+    color: var(--text-color);
+    opacity: 0.7;
   }
 }
 
@@ -1015,7 +1020,7 @@ onMounted(() => {
 // Education Section
 .education-section {
   padding: 6rem 2rem;
-  background-color: white;
+  background-color: var(--light-color);
 }
 
 .education-grid {
@@ -1027,7 +1032,8 @@ onMounted(() => {
 }
 
 .education-card {
-  background-color: white;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -1066,14 +1072,15 @@ onMounted(() => {
   }
   
   .period {
-    color: #6b7280;
+    color: var(--text-color);
+    opacity: 0.7;
   }
 }
 
 // Certifications Section
 .certifications-section {
   padding: 6rem 2rem;
-  background-color: #f8fafc;
+  background-color: var(--light-color);
 }
 
 .certifications-grid {
@@ -1085,7 +1092,8 @@ onMounted(() => {
 }
 
 .certification-card {
-  background-color: white;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -1129,7 +1137,7 @@ onMounted(() => {
 // Skills Section
 .skills-section {
   padding: 6rem 2rem;
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .skills-container {
@@ -1141,7 +1149,8 @@ onMounted(() => {
 }
 
 .skill-category {
-  background-color: #f8fafc;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 15px;
   padding: 2.5rem;
   box-shadow: var(--shadow-light);
@@ -1159,7 +1168,7 @@ onMounted(() => {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    color: var(--dark-color);
+    color: var(--text-color);
     
     i {
       font-size: 1.5rem;

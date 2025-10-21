@@ -3,9 +3,11 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import Footer from './components/Footer.vue';
 import ChatWidget from './components/ChatWidget.vue';
+import { useTheme } from './composables/useTheme';
 
 const router = useRouter();
 const isMenuOpen = ref(false);
+const { isDark, toggleTheme, initTheme } = useTheme();
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -16,7 +18,7 @@ const closeMenu = () => {
 };
 
 onMounted(() => {
-  // Inicializar qualquer animação global aqui
+  initTheme();
 });
 </script>
 
@@ -42,6 +44,9 @@ onMounted(() => {
           <!-- <li><router-link to="/portfolio" @click="closeMenu">Portfólio</router-link></li> -->
           <li><router-link to="/contact" @click="closeMenu">Contato</router-link></li>
         </ul>
+        <button class="theme-toggle" @click="toggleTheme" :aria-label="isDark ? 'Ativar modo claro' : 'Ativar modo escuro'">
+          <i :class="isDark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+        </button>
       </nav>
     </header>
     
@@ -65,8 +70,12 @@ onMounted(() => {
   --secondary-color: #10b981;
   --dark-color: #1f2937;
   --light-color: #f9fafb;
-  --text-color: #374151;
+  --text-color: #000000;
   --accent-color: #8b5cf6;
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --border-color: rgba(0, 0, 0, 0.1);
   --transition-speed: 0.3s;
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -74,6 +83,25 @@ onMounted(() => {
   --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode {
+  --primary-color: #6366f1;
+  --secondary-color: #10b981;
+  --dark-color: #f9fafb;
+  --light-color: #0a0a0a;
+  --text-color: #ffffff;
+  --accent-color: #a78bfa;
+  --bg-color: #0a0a0a;
+  --card-bg: #1a1a1a;
+  --header-bg: rgba(10, 10, 10, 0.95);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -90,11 +118,12 @@ html {
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
-  background-color: var(--light-color);
+  background-color: var(--bg-color);
   line-height: 1.6;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 // Scrollbar personalizada
@@ -103,7 +132,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--light-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -114,6 +143,12 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gradient-secondary);
+}
+
+.dark-mode {
+  ::-webkit-scrollbar-track {
+    background: var(--bg-color);
+  }
 }
 
 // Seleção de texto personalizada
@@ -145,11 +180,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--header-bg);
   backdrop-filter: blur(20px) saturate(180%);
   box-shadow: var(--shadow-light);
   transition: all var(--transition-speed) ease, transform 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid var(--border-color);
   
   &:hover {
     transform: translateY(-1px);
@@ -213,7 +248,7 @@ body {
     position: absolute;
     height: 2px;
     width: 100%;
-    background: var(--dark-color);
+    background: var(--text-color);
     border-radius: 2px;
     opacity: 1;
     left: 0;
@@ -254,6 +289,10 @@ body {
 }
 
 .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  
   ul {
     display: flex;
     list-style: none;
@@ -324,6 +363,57 @@ main {
   margin-top: 70px;
 }
 
+// Botão de Tema
+.theme-toggle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+  }
+  
+  i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+    
+    &::before {
+      opacity: 0.1;
+    }
+    
+    i {
+      transform: rotate(20deg);
+    }
+  }
+  
+  &:active {
+    transform: translateY(0) scale(0.95);
+  }
+}
 
 // Animações de página
 .page-enter-active {
@@ -362,8 +452,8 @@ main {
     right: -100%;
     width: 70%;
     height: 100vh;
-    background-color: white;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     padding-top: 80px;
     transition: right var(--transition-speed) ease;
     
@@ -382,6 +472,10 @@ main {
           font-size: 1.2rem;
         }
       }
+    }
+    
+    .theme-toggle {
+      margin: 2rem;
     }
   }
 }
