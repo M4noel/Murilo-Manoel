@@ -436,12 +436,13 @@ const groupedMessages = computed(() => {
   right: 0;
   width: 380px;
   height: 460px;
-  background: white;
+  background: var(--card-bg);
   border-radius: 20px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border: 1px solid var(--border-color);
 
   @media (max-width: 768px) {
     position: fixed;
@@ -537,11 +538,11 @@ const groupedMessages = computed(() => {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: #f8fafc;
+  background: var(--bg-color);
 }
 
 .contact-form {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -551,6 +552,7 @@ const groupedMessages = computed(() => {
   margin-top: 0;
   height: 290px;
   overflow-y: scroll;
+  border: 1px solid var(--border-color);
 
   .contact-icon {
     width: 70px;
@@ -609,10 +611,12 @@ const groupedMessages = computed(() => {
     input {
       width: 100%;
       padding: 0.9rem 1rem;
-      border: 2px solid #e5e7eb;
+      border: 2px solid var(--border-color);
       border-radius: 12px;
       font-size: 0.95rem;
       transition: all 0.3s ease;
+      background: var(--bg-color);
+      color: var(--text-color);
 
       &:focus {
         outline: none;
@@ -650,8 +654,8 @@ const groupedMessages = computed(() => {
   }
 
   .info-box {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 10px;
     padding: 0.8rem;
     margin-top: 0.5rem;
@@ -669,16 +673,18 @@ const groupedMessages = computed(() => {
     p {
       margin: 0;
       font-size: 0.85rem;
-      color: #1e40af;
+      color: var(--text-color);
       line-height: 1.5;
       text-align: left;
+      opacity: 0.9;
     }
   }
 
   .privacy-note {
     margin: 1rem 0 0;
     font-size: 0.8rem;
-    color: #6b7280;
+    color: var(--text-color);
+    opacity: 0.7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -694,7 +700,7 @@ const groupedMessages = computed(() => {
   flex: 1;
   overflow-y: auto;
   padding: 1.5rem;
-  background: #f8fafc;
+  background: var(--bg-color);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -708,18 +714,23 @@ const groupedMessages = computed(() => {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--border-color);
     border-radius: 3px;
+    
+    &:hover {
+      background: var(--primary-color);
+    }
   }
 }
 
 .welcome-message {
-  background: white;
+  background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
 
   .welcome-icon {
     font-size: 2.5rem;
@@ -740,8 +751,8 @@ const groupedMessages = computed(() => {
   }
 
   .change-contact-btn {
-    background: #f3f4f6;
-    border: 1px solid #e5e7eb;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
     padding: 0.6rem 1rem;
     border-radius: 8px;
     font-size: 0.85rem;
@@ -753,7 +764,7 @@ const groupedMessages = computed(() => {
     gap: 0.5rem;
 
     &:hover {
-      background: #e5e7eb;
+      background: var(--card-bg);
       border-color: var(--primary-color);
       color: var(--primary-color);
     }
@@ -769,12 +780,13 @@ const groupedMessages = computed(() => {
   margin: 1rem 0;
 
   span {
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     font-size: 0.75rem;
     color: var(--text-color);
     font-weight: 500;
+    border: 1px solid var(--border-color);
   }
 }
 
@@ -797,10 +809,11 @@ const groupedMessages = computed(() => {
     justify-content: flex-start;
 
     .message-content {
-      background: white;
-      color: var(--dark-color);
+      background: var(--card-bg);
+      color: var(--text-color);
       border-radius: 18px 18px 18px 4px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
     }
   }
 
@@ -849,8 +862,8 @@ const groupedMessages = computed(() => {
 
 .chat-input {
   padding: 1rem;
-  background: white;
-  border-top: 1px solid #e5e7eb;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
 
   form {
     display: flex;
@@ -860,10 +873,12 @@ const groupedMessages = computed(() => {
   input {
     flex: 1;
     padding: 0.8rem 1rem;
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--border-color);
     border-radius: 25px;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    background: var(--bg-color);
+    color: var(--text-color);
 
     &:focus {
       outline: none;
@@ -971,13 +986,14 @@ const groupedMessages = computed(() => {
   animation: fadeIn 0.3s ease;
 
   .modal-content {
-    background: white;
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 20px;
     text-align: center;
     max-width: 300px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     animation: slideUp 0.3s ease;
+    border: 1px solid var(--border-color);
 
     .modal-icon {
       width: 60px;
@@ -1025,11 +1041,12 @@ const groupedMessages = computed(() => {
         gap: 0.5rem;
 
         &.btn-cancel {
-          background: #f3f4f6;
+          background: var(--bg-color);
           color: var(--text-color);
+          border: 1px solid var(--border-color);
 
           &:hover {
-            background: #e5e7eb;
+            background: var(--card-bg);
           }
         }
 
@@ -1054,8 +1071,8 @@ const groupedMessages = computed(() => {
 // Mensagem de Chat Encerrado
 .chat-ended-message {
   padding: 1.5rem;
-  background: white;
-  border-top: 1px solid #e5e7eb;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
