@@ -23,26 +23,49 @@ const formData = ref({
 const isSubmitting = ref(false);
 const formSubmitted = ref(false);
 const formError = ref(false);
+const resultMessage = ref('');
 
-const submitForm = async () => {
+const submitForm = async (event) => {
   if (!formData.value.name || !formData.value.email || !formData.value.message) {
     return;
   }
   
   isSubmitting.value = true;
+  resultMessage.value = 'Enviando...';
+  formError.value = false;
+  formSubmitted.value = false;
   
-  // Simulação de envio de formulário
   try {
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    formSubmitted.value = true;
-    formData.value = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    };
+    const formDataToSend = new FormData();
+    formDataToSend.append('access_key', 'bae09d7e-4999-46d0-ab07-d03163201d2d');
+    formDataToSend.append('name', formData.value.name);
+    formDataToSend.append('email', formData.value.email);
+    formDataToSend.append('subject', formData.value.subject || 'Contato via Portfólio');
+    formDataToSend.append('message', formData.value.message);
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formDataToSend
+    });
+
+    const data = await response.json();
+    
+    if (data.success) {
+      formSubmitted.value = true;
+      resultMessage.value = 'Formulário enviado com sucesso!';
+      formData.value = {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      };
+    } else {
+      formError.value = true;
+      resultMessage.value = 'Erro ao enviar formulário. Tente novamente.';
+    }
   } catch (error) {
     formError.value = true;
+    resultMessage.value = 'Erro ao enviar formulário. Tente novamente.';
   } finally {
     isSubmitting.value = false;
   }
@@ -123,10 +146,10 @@ const submitForm = async () => {
             <a href="https://github.com/M4noel" target="_blank" aria-label="GitHub">
               <i class="fab fa-github"></i>
             </a>
-            <a href="#" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/murilo-manoel/" target="_blank" aria-label="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>
-            <a href="#" target="_blank" aria-label="WhatsApp">
+            <a href="https://wa.me/5511957241394" target="_blank" aria-label="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
@@ -191,12 +214,17 @@ const submitForm = async () => {
             
             <div class="form-message success" v-if="formSubmitted">
               <i class="fas fa-check-circle"></i>
-              <p>Sua mensagem foi enviada com sucesso! Entrarei em contato em breve.</p>
+              <p>{{ resultMessage }}</p>
             </div>
             
             <div class="form-message error" v-if="formError">
               <i class="fas fa-exclamation-circle"></i>
-              <p>Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.</p>
+              <p>{{ resultMessage }}</p>
+            </div>
+            
+            <div class="form-message info" v-if="isSubmitting">
+              <i class="fas fa-spinner fa-spin"></i>
+              <p>{{ resultMessage }}</p>
             </div>
           </form>
         </div>
@@ -480,6 +508,11 @@ form {
   &.error {
     background-color: rgba(239, 68, 68, 0.1);
     color: #ef4444;
+  }
+  
+  &.info {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
   }
   
   i {

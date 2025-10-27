@@ -4,6 +4,8 @@ import { useRouter } from 'vue-router';
 import artistisseHome from '@/assets/img/site-home.png';
 import artistisseProduto from '@/assets/img/FireShot Capture 022 - Footer Artistisse - localhost.png';
 
+import agroclipImage from '@/assets/img/Agroclipe.png';
+
 const router = useRouter();
 const isVisible = ref(false);
 const artistisseCurrentSlide = ref(0);
@@ -254,14 +256,7 @@ const prevSlideArtistisse = () => {
         <!-- AgroClip -->
         <div class="project-card agroclip-card" data-aos="fade-up" data-aos-delay="700">
           <div class="project-image">
-            <div class="iframe-container">
-              <iframe 
-                src="https://agroclip.com.br/" 
-                title="AgroClip"
-                loading="lazy"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-              ></iframe>
-            </div>
+            <img :src="agroclipImage" alt="AgroClip - Plataforma Agrícola" />
             <div class="project-overlay">
               <div class="project-actions">
                 <button class="btn small" @click="router.push('/contact')">Contato</button>
@@ -443,42 +438,27 @@ const prevSlideArtistisse = () => {
           </div>
         </div>
         
-        <!-- Artistisse E-commerce -->
-        <div class="project-card artistisse-card" data-aos="fade-up" data-aos-delay="1500">
+        <!-- Tropical Camboinhas -->
+        <div class="project-card tropical-card" data-aos="fade-up" data-aos-delay="1500">
           <div class="project-image">
-            <div class="carousel-wrapper">
-              <div class="carousel-track" :style="{ transform: `translateX(-${artistisseCurrentSlide * 100}%)` }">
-                <div class="carousel-slide">
-                  <img :src="artistisseHome" alt="Artistisse - Página Principal" />
-                </div>
-                <div class="carousel-slide">
-                  <img :src="artistisseProduto" alt="Artistisse - Página de Produto" />
-                </div>
-              </div>
-              <button class="carousel-btn prev" @click.stop="prevSlideArtistisse" v-if="artistisseCurrentSlide > 0">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <button class="carousel-btn next" @click.stop="nextSlideArtistisse" v-if="artistisseCurrentSlide < 1">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-              <div class="carousel-indicators">
-                <span 
-                  v-for="n in 2" 
-                  :key="n" 
-                  :class="['indicator', { active: artistisseCurrentSlide === n - 1 }]"
-                  @click.stop="artistisseCurrentSlide = n - 1"
-                ></span>
-              </div>
+            <div class="iframe-container">
+              <iframe 
+                src="https://tropical-camboinhas-v2.vercel.app/" 
+                title="Tropical Camboinhas"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
             </div>
             <div class="project-overlay">
               <div class="project-actions">
                 <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://tropical-camboinhas-v2.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
               </div>
             </div>
           </div>
           <div class="project-content">
-            <h3>Artistisse - E-commerce de Camisetas</h3>
-            <p>E-commerce moderno para venda de camisetas com designs exclusivos de artistas. Sistema completo com carrossel de produtos, carrinho de compras e checkout integrado.</p>
+            <h3>Tropical Camboinhas</h3>
+            <p>Website moderno e responsivo desenvolvido para o restaurante Tropical Camboinhas. Interface elegante com menu interativo, galeria de fotos e sistema de reservas online integrado.</p>
           </div>
         </div>
         
@@ -545,7 +525,7 @@ const prevSlideArtistisse = () => {
             <p>Conheça minha trajetória, habilidades técnicas, projetos desenvolvidos e certificações. Um histórico completo da minha experiência como desenvolvedor web.</p>
             
             <div class="resume-actions">
-              <a href="/curriculo-murilo-manoel.html" target="_blank" class="btn primary resume-btn">
+              <a href="/Curriculo-Manoel-Murilo-23 (1).pdf" target="_blank" class="btn primary resume-btn">
                 <i class="fas fa-eye"></i>
                 Visualizar Currículo
               </a>
@@ -557,7 +537,7 @@ const prevSlideArtistisse = () => {
             
             <div class="resume-tip">
               <i class="fas fa-lightbulb"></i>
-              <span>Você também pode usar Ctrl+P na visualização para salvar como PDF</span>
+              <span>Clique em "Visualizar" para ver o PDF no navegador ou "Baixar" para salvar em seu computador</span>
             </div>
           </div>
         </div>
@@ -587,7 +567,7 @@ const prevSlideArtistisse = () => {
               <div class="stat-box">
                 <i class="fas fa-code-branch"></i>
                 <div class="stat-info">
-                  <span class="stat-value">23</span>
+                  <span class="stat-value">26</span>
                   <span class="stat-label">Repositórios Públicos</span>
                 </div>
               </div>

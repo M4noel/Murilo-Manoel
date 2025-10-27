@@ -4,11 +4,11 @@
       <a href="https://github.com/M4noel" target="_blank" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="#" target="_blank" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/murilo-manoel/" target="_blank" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="#" target="_blank" aria-label="Twitter">
-        <i class="fab fa-twitter"></i>
+      <a href="https://wa.me/5511957241394" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
       </a>
     </div>
     <p>&copy; {{ new Date().getFullYear() }} Murilo Manoel. Desenvolvedor Web.</p>
@@ -88,7 +88,7 @@
       }
       
       &:nth-child(3):hover {
-        background: #1da1f2;
+        background: #25d366;
       }
     }
   }
