@@ -462,6 +462,213 @@ const prevSlideArtistisse = () => {
           </div>
         </div>
         
+        <div class="project-card" data-aos="fade-up" data-aos-delay="1600">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://casas-buzios.vercel.app/" 
+                title="Casas Búzios"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://casas-buzios.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Casas Búzios</h3>
+            <p>Portal de casas de veraneio em Búzios com foco em investimento e locação por temporada.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="1700">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://viva-b-zios-2-residence.vercel.app/" 
+                title="VIVA Búzios Geribá"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://viva-b-zios-2-residence.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>VIVA Búzios Geribá</h3>
+            <p>Casas duplex de alto padrão em Geribá com lazer completo, fitness e portaria 24h.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="1800">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://mbloft-icarai-site.vercel.app/" 
+                title="MBLoft Icaraí"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://mbloft-icarai-site.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>MBLoft Icaraí</h3>
+            <p>Studios funcionais em Icaraí, tecnologia, segurança e área de lazer completa.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="1900">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://conviva-life-inga.vercel.app/" 
+                title="CONVIVA Life Ingá"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://conviva-life-inga.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>CONVIVA Life Ingá</h3>
+            <p>Studios, 1 e 2 quartos no Ingá com lazer no rooftop e conveniências.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="2000">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://da-vind-new.vercel.app/" 
+                title="Da Vince Icaraí"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://da-vind-new.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Da Vince Icaraí</h3>
+            <p>Studios e apartamentos de alto padrão com design inteligente e rooftop.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="2100">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://niteroi-five.vercel.app/" 
+                title="Empreendimentos Niterói"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://niteroi-five.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Empreendimentos Niterói</h3>
+            <p>Conteúdo institucional sobre investimento imobiliário e qualidade de vida em Niterói.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="2200">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://conviva-life-camboinhas.vercel.app/" 
+                title="Conviva Life Camboinhas"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://conviva-life-camboinhas.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Conviva Life Camboinhas</h3>
+            <p>Apartamentos de 1, 2 e 3 quartos com lazer completo e sustentabilidade.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="2300">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://conviva-camboinhas.vercel.app/" 
+                title="Conviva Camboinhas"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://conviva-camboinhas.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Conviva Camboinhas</h3>
+            <p>1 quarto e Double Suite com wellness, convivência e localização privilegiada.</p>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="fade-up" data-aos-delay="2400">
+          <div class="project-image">
+            <div class="iframe-container">
+              <iframe 
+                src="https://conviva-piratininga.vercel.app/" 
+                title="Conviva Piratininga"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              ></iframe>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <button class="btn small" @click="router.push('/contact')">Contato</button>
+                <a href="https://conviva-piratininga.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Conviva Piratininga</h3>
+            <p>Studios prontos para morar com conveniências e rooftop com piscina e sauna.</p>
+          </div>
+        </div>
+        
       </div>
       
       <div class="view-all-projects" data-aos="fade-up">
