@@ -1,8 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import Notification from '../components/Notification.vue';
 
 const router = useRouter();
+const notificationRef = ref(null);
 
 // Carregar script do LinkedIn
 onMounted(() => {
@@ -53,6 +55,9 @@ const submitForm = async (event) => {
     if (data.success) {
       formSubmitted.value = true;
       resultMessage.value = 'Formulário enviado com sucesso!';
+      if (notificationRef.value) {
+        notificationRef.value.show();
+      }
       formData.value = {
         name: '',
         email: '',
@@ -62,10 +67,16 @@ const submitForm = async (event) => {
     } else {
       formError.value = true;
       resultMessage.value = 'Erro ao enviar formulário. Tente novamente.';
+      if (notificationRef.value) {
+        notificationRef.value.show();
+      }
     }
   } catch (error) {
     formError.value = true;
     resultMessage.value = 'Erro ao enviar formulário. Tente novamente.';
+    if (notificationRef.value) {
+      notificationRef.value.show();
+    }
   } finally {
     isSubmitting.value = false;
   }
@@ -74,6 +85,14 @@ const submitForm = async (event) => {
 
 <template>
   <div class="contact-container">
+    <!-- Notification Component -->
+    <Notification 
+      ref="notificationRef"
+      :type="formError ? 'error' : 'success'"
+      :message="resultMessage"
+      :duration="4000"
+    />
+    
     <!-- Hero Section Modernizada -->
     <section class="contact-hero-modern">
       <div class="hero-bg-animation">

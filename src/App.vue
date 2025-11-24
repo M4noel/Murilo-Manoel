@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import Footer from './components/Footer.vue';
-import ChatWidget from './components/ChatWidget.vue';
+import WhatsAppButton from './components/WhatsAppButton.vue';
 import { useTheme } from './composables/useTheme';
 
 const router = useRouter();
@@ -58,8 +58,8 @@ onMounted(() => {
       </router-view>
     </main>
     
-    <!-- Chat Widget -->
-    <ChatWidget />
+    <!-- WhatsApp Button -->
+    <WhatsAppButton />
   </div>
    <Footer />
 </template>
