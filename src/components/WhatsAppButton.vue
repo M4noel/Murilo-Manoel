@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const phoneNumber = '11957241394';
+const phoneNumber = '111957241394';
 const whatsappMessage = 'Olá! 👋 Gostaria de conversar com você!';
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 const showMessage = ref(false);
