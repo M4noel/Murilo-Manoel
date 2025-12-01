@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:analyze": "vite build --mode analyze"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
@@ -14,12 +15,12 @@
     "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
     "gsap": "^3.13.0",
-    "sass": "^1.91.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
+    "sass": "^1.94.2",
     "vite": "^7.1.2"
   }
 }

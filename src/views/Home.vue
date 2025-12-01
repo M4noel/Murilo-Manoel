@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import ProjectsCarousel from '@/components/ProjectsCarousel.vue';
 import artistisseHome from '@/assets/img/site-home.png';
 import artistisseProduto from '@/assets/img/FireShot Capture 022 - Footer Artistisse - localhost.png';
-
 import agroclipImage from '@/assets/img/Agroclipe.png';
 
 const router = useRouter();
@@ -108,6 +108,12 @@ const prevSlideArtistisse = () => {
     <!-- Projects Preview Section -->
     <section class="projects-section" id="projects">
       <h2 class="section-title" data-aos="fade-up">Projetos Recentes</h2>
+      
+      <!-- Carrossel de Projetos em Destaque -->
+      <ProjectsCarousel />
+      
+      <!-- Mais Projetos -->
+      <h3 class="subsection-title" data-aos="fade-up" style="text-align: center; font-size: 2rem; font-weight: 800; margin: 4rem 0 3rem; color: var(--text-color);">Mais Projetos</h3>
       
       <div class="projects-grid">
         <!-- Escola de Música Harmony -->
@@ -581,7 +587,7 @@ const prevSlideArtistisse = () => {
           <div class="project-image">
             <div class="iframe-container">
               <iframe 
-                src="https://niteroi-five.vercel.app/" 
+                src="https://www.xn--lanamentosniteroi-csb.com.br//" 
                 title="Empreendimentos Niterói"
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
@@ -590,7 +596,7 @@ const prevSlideArtistisse = () => {
             <div class="project-overlay">
               <div class="project-actions">
                 <button class="btn small" @click="router.push('/contact')">Contato</button>
-                <a href="https://niteroi-five.vercel.app/" class="btn small secondary" target="_blank">Abrir Site</a>
+                <a href="https://www.xn--lanamentosniteroi-csb.com.br/" class="btn small secondary" target="_blank">Abrir Site</a>
               </div>
             </div>
           </div>
