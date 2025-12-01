@@ -30,7 +30,7 @@ const openWhatsApp = () => {
       title="Enviar mensagem no WhatsApp"
     >
       <span class="badge">1</span>
-      <i class="fab fa-whatsapp"></i>
+      <img src="/whatsapp.png" alt="WhatsApp" width="32" height="32">
     </button>
   </div>
 </template>
@@ -53,23 +53,32 @@ const openWhatsApp = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   position: relative;
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #25d366 0%, #20ba5f 100%);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 26px;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
+  
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
   
   &:hover {
     transform: scale(1.15);
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
-    animation: pulse 1.5s infinite;
   }
 
   &:active {
@@ -85,21 +94,21 @@ const openWhatsApp = () => {
 
 .badge {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -5px;
+  right: -5px;
   background: #dc2626;
   color: white;
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 12px;
   box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
   animation: badgeBounce 2s infinite;
-  border: 3px solid white;
+  border: 2px solid white;
 }
 
 .success-message {
