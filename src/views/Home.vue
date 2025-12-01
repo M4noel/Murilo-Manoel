@@ -592,7 +592,7 @@ const prevSlideArtistisse = () => {
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               ></iframe>
-            </div>
+            </div> 
             <div class="project-overlay">
               <div class="project-actions">
                 <button class="btn small" @click="router.push('/contact')">Contato</button>

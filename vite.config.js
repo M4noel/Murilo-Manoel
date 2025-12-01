@@ -11,27 +11,22 @@ export default defineConfig({
     }
   },
   build: {
-    // Otimizações de build
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.log em produção
-        drop_debugger: true
-      }
-    },
+    // Otimizações de build (usando esbuild que é mais rápido)
+    minify: 'esbuild',
     // Code splitting
     rollupOptions: {
       output: {
         manualChunks: {
-          'vendor': ['vue', 'vue-router'],
-          'icons': ['@fortawesome/fontawesome-free']
+          'vendor': ['vue', 'vue-router']
         }
       }
     },
     // Otimização de chunks
     chunkSizeWarningLimit: 1000,
     // Sourcemaps apenas em dev
-    sourcemap: false
+    sourcemap: false,
+    // Otimizar CSS
+    cssCodeSplit: true
   },
   // Otimizações de performance
   optimizeDeps: {
