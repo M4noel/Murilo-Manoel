@@ -223,6 +223,12 @@ onUnmounted(() => {
   padding: 0 1rem;
 }
 
+@media (max-width: 768px) {
+  .projects-carousel-container {
+    padding: 0  0rem;
+  }
+}
+
 .carousel-wrapper {
   position: relative;
   overflow: hidden;
@@ -501,6 +507,7 @@ onUnmounted(() => {
     
     @media (max-width: 968px) {
       left: 10px;
+      display: none;
     }
   }
   
@@ -509,6 +516,7 @@ onUnmounted(() => {
     
     @media (max-width: 968px) {
       right: 10px;
+      display: none;
     }
   }
   
