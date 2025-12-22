@@ -97,6 +97,14 @@ const projects = ref([
     url: 'https://mefseguranca.com.br/',
     gradient: 'linear-gradient(90deg, #1a365d, #2c5282, #2b6cb0)',
     color: '#2b6cb0'
+  },
+   {
+    id: 11,
+    title: 'Tag4id',
+    description: 'Cronometragem e Consultoria em Eventos Esportivos',
+    url: 'https://www.tag4id.com.br/',
+    gradient: 'linear-gradient(90deg, #1a365d, #2c5282, #2b6cb0)',
+    color: '#33D4FF'
   }
 ]);
 
