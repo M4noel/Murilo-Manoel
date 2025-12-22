@@ -80,6 +80,23 @@ const projects = ref([
     url: 'https://conviva-piratininga.vercel.app/',
     gradient: 'linear-gradient(90deg, #f97316, #ea580c, #c2410c)',
     color: '#f97316'
+  },
+  {
+    id: 10,
+    title: 'Doralice Cosméticos',
+    description: 'Em desenvolvimento - Em breve você poderá conferir este e-commerce',
+    url: 'https://doralicecosmeticos.com.br/',
+    gradient: 'linear-gradient(90deg, #ff6b6b, #ff8e8e, #ff5252)',
+    color: '#ff6b6b',
+    isComingSoon: true
+  },
+  {
+    id: 11,
+    title: 'M&F Segurança',
+    description: 'Soluções em segurança eletrônica e monitoramento 24 horas',
+    url: 'https://mefseguranca.com.br/',
+    gradient: 'linear-gradient(90deg, #1a365d, #2c5282, #2b6cb0)',
+    color: '#2b6cb0'
   }
 ]);
 
@@ -142,17 +159,31 @@ onUnmounted(() => {
           <div class="project-showcase">
             <div class="project-preview">
               <div class="iframe-wrapper">
-                <iframe 
-                  v-if="Math.abs(currentSlide - projects.indexOf(project)) <= 1"
-                  :src="project.url" 
-                  :title="project.title"
-                  loading="lazy"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                  importance="low"
-                ></iframe>
-                <div v-else class="iframe-placeholder">
-                  <i class="fas fa-spinner fa-spin"></i>
-                </div>
+                <template v-if="project.isComingSoon">
+                  <div class="coming-soon-image">
+                    <img 
+                      src="/DORALICE.png" 
+                      :alt="project.title"
+                      class="project-screenshot"
+                    />
+                    <div class="coming-soon-overlay">
+                      <span>Visualização do Projeto</span>
+                    </div>
+                  </div>
+                </template>
+                <template v-else>
+                  <iframe 
+                    v-if="Math.abs(currentSlide - projects.indexOf(project)) <= 1"
+                    :src="project.url" 
+                    :title="project.title"
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                    importance="low"
+                  ></iframe>
+                  <div v-else class="iframe-placeholder">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </div>
+                </template>
               </div>
               <div class="preview-overlay" :style="{ background: `linear-gradient(135deg, ${project.color}15, ${project.color}30)` }">
                 <div class="overlay-content">
@@ -277,6 +308,37 @@ onUnmounted(() => {
       display: block;
       transform: scale(1);
       transition: transform 0.6s ease;
+    }
+    
+    .coming-soon-image {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    
+    .project-screenshot {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+    
+    .coming-soon-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
     .iframe-placeholder {
