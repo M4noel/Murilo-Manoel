@@ -158,8 +158,9 @@ onUnmounted(() => {
 <template>
   <div class="projects-carousel-container" 
        @mouseenter="pauseAutoPlay" 
-       @mouseleave="resumeAutoPlay">
-    <div class="carousel-wrapper">
+       @mouseleave="resumeAutoPlay"
+       style="position: relative;">
+    <div class="carousel-wrapper" style="position: relative; width: 100%; height: 100%;">
       <div class="carousel-track" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
         <div v-for="project in projects" 
              :key="project.id" 
@@ -223,13 +224,15 @@ onUnmounted(() => {
         </div>
       </div>
       
-      <!-- Controles do Carrossel -->
-      <button class="carousel-control prev" @click="prevSlide" aria-label="Projeto anterior">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="carousel-control next" @click="nextSlide" aria-label="Próximo projeto">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+      <!-- Controles do Carrossel - Apenas Desktop -->
+      <div class="carousel-arrows">
+        <button class="carousel-control prev" @click="prevSlide" aria-label="Projeto anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control next" @click="nextSlide" aria-label="Próximo projeto">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
       
       <!-- Indicadores -->
       <div class="carousel-indicators">
@@ -546,54 +549,103 @@ onUnmounted(() => {
   }
 }
 
+/* Controles do carrossel */
+.carousel-arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
 .carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
   border-radius: 50%;
-  background: white;
-  border: 2px solid var(--border-color);
-  color: var(--primary-color);
-  font-size: 1.2rem;
+  color: #ffffff !important;
+  font-size: 1rem;
   cursor: pointer;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  z-index: 10;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  z-index: 1001;
+  opacity: 0.8;
+  pointer-events: auto;
   
-  &:hover {
-    transform: translateY(-50%) scale(1.1);
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.3);
+  /* Estilo para quando o Font Awesome não carregar */
+  &::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
   }
   
+  /* Seta esquerda */
+  &.prev::before {
+    transform: rotate(-45deg);
+    margin-right: 1px;
+  }
+  
+  /* Seta direita */
+  &.next::before {
+    transform: rotate(135deg);
+    margin-left: 1px;
+  }
+  
+  /* Estilo para o ícone */
+  i {
+    position: relative;
+    z-index: 2;
+    display: inline-block !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    font-size: 0.9rem;
+  }
+  
+  /* Efeito hover */
+  &:hover, &:active {
+    background: rgba(0, 0, 0, 0.8) !important;
+    opacity: 1;
+  }
+  
+  /* Posicionamento */
   &.prev {
-    left: 10px;
-    
-    @media (max-width: 968px) {
-      left: 10px;
-      display: none;
-    }
+    left: 15px;
   }
   
   &.next {
-    right: 20px;
-    
-    @media (max-width: 968px) {
-      right: 10px;
-      display: none;
-    }
+    right: 15px;
   }
-  
-  @media (max-width: 968px) {
-    width: 50px;
-    height: 50px;
-    font-size: 1rem;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+  .carousel-control {
+    width: 36px;
+    height: 36px;
+    
+    &::before {
+      width: 10px;
+      height: 10px;
+    }
+    
+    &.prev {
+      left: 10px;
+    }
+    
+    &.next {
+      right: 10px;
+    }
   }
 }
 
